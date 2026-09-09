@@ -22,6 +22,35 @@ export default function CommunitySection() {
             Más de 50,000 buscadores comparten lecturas en tiempo real, rituales de luna nueva y descifran profecías oraculares en nuestra comunidad privada.
           </p>
 
+          {/* Facebook Social Validation Banner */}
+          <div className="mt-8 w-full p-4 sm:p-5 rounded-2xl bg-[#1877F2]/10 border border-[#1877F2]/30 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-center sm:text-left flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(24,119,242,0.5)]">
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-xs sm:text-sm font-semibold text-white">
+                  Únete a nuestra comunidad de más de miles de iniciados en Facebook
+                </p>
+                <p className="text-[11px] text-blue-300 font-mono mt-0.5">
+                  ✦ Publicaciones diarias, tránsitos y tiradas en vivo en @tarotnauta
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="https://www.facebook.com/tarotnauta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 rounded-full bg-[#1877F2] hover:bg-[#166fe5] text-white font-cinzel text-xs font-bold tracking-wider transition-all duration-300 shadow-[0_0_20px_rgba(24,119,242,0.4)] hover:shadow-[0_0_30px_rgba(24,119,242,0.7)] flex items-center gap-2 hover:scale-105 active:scale-95 whitespace-nowrap"
+            >
+              <span>Seguir a @tarotnauta en Facebook</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
           <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
             <input
               type="email"

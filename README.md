@@ -167,6 +167,7 @@ Desarrollado con pasión cósmica y código limpio por:
 
 **DevSuarez05**
 - GitHub: [@DevSuarez05](https://github.com/DevSuarez05)
+- Facebook Oficial: [@tarotnauta](https://www.facebook.com/tarotnauta)
 - Proyecto: [esoteric-landing](https://github.com/DevSuarez05/esoteric-landing)
 
 ---

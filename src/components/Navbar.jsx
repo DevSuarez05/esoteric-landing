@@ -59,8 +59,21 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button & Social */}
         <div className="hidden sm:flex items-center gap-3">
+          <a
+            href="https://www.facebook.com/tarotnauta"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Facebook Oficial: @tarotnauta"
+            aria-label="Página de Facebook @tarotnauta"
+            className="w-9 h-9 rounded-full bg-white/5 border border-white/15 hover:border-gold-accent hover:text-gold-accent flex items-center justify-center transition-all duration-300 text-gray-300 hover:scale-105 shadow-sm"
+          >
+            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
+
           <a
             href="#oracle"
             className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-semibold rounded-full group bg-gradient-to-r from-gold-accent via-amber-200 to-astral-cyan shadow-gold-glow hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] active:scale-95 transition-all duration-300"
@@ -96,6 +109,20 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+
+          <a
+            href="https://www.facebook.com/tarotnauta"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-[#1877F2]/20 border border-[#1877F2]/40 text-blue-300 hover:text-white transition-colors text-xs font-semibold"
+          >
+            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+            Facebook Oficial @tarotnauta
+          </a>
+
           <a
             href="#oracle"
             onClick={() => setMobileMenuOpen(false)}
