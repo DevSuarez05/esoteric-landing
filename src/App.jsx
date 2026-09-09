@@ -3,34 +3,42 @@ import Hero from './components/Hero';
 import OracleIA from './components/OracleIA';
 import TarotSection from './components/TarotSection';
 import PlanetaryTransits from './components/PlanetaryTransits';
+import Pricing from './components/Pricing';
+import Testimonials from './components/Testimonials';
 import CommunitySection from './components/CommunitySection';
 import Footer from './components/Footer';
 
 export default function App() {
   return (
     <div className="min-h-screen bg-dark-mystic text-white selection:bg-gold-accent selection:text-black relative">
-      {/* Floating Navigation */}
+      {/* Floating Glassmorphism Navigation */}
       <Navbar />
 
       {/* Main Landing Page Flow */}
       <main>
-        {/* Hero with dynamic StarBackground */}
+        {/* 1. Hero with dynamic StarBackground canvas */}
         <Hero />
 
-        {/* Oracle AI Altar */}
+        {/* 2. Oracle AI Altar */}
         <OracleIA />
 
-        {/* 3-Card Tarot Reading */}
+        {/* 3. 3-Card Tarot Reading with 3D Flip & Confetti */}
         <TarotSection />
 
-        {/* Real-time Planetary Transits */}
+        {/* 4. Active Planetary Transits & Astrogram */}
         <PlanetaryTransits />
 
-        {/* Community & Soul Circle */}
+        {/* 5. Pricing & Celestial Access Plans */}
+        <Pricing />
+
+        {/* 6. Testimonials & Ecos del Cosmos */}
+        <Testimonials />
+
+        {/* 7. Community & Global Esoteric Circle */}
         <CommunitySection />
       </main>
 
-      {/* Sanctum Footer */}
+      {/* 8. Sanctum Footer with Newsletter & Ethics */}
       <Footer />
     </div>
   );

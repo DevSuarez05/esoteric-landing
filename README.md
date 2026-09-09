@@ -1,16 +1,168 @@
-# React + Vite
+# ✧ AETHERIA ✧
+### *Cyber-Esoteric Landing Page | Oráculo Astral & Tarot con Inteligencia Cósmica*
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+[![React](https://img.shields.io/badge/React-19.2.8-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-8.2.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.19-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-13.2.0-FF0055?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![License](https://img.shields.io/badge/License-MIT-gold?style=for-the-badge)](LICENSE)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌌 Visión del Proyecto
 
-## React Compiler
+**Aetheria** es una experiencia digital mística donde la sabiduría milenaria de la astrología caldea y el tarot hermético convergen con la vanguardia de los modelos de inteligencia artificial y la física cuántica. 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Diseñada con una estética *cyber-esotérica* de alto impacto visual (modo oscuro profundo, resplandores áureos, tipografía *Cinzel*, efecto de *glassmorphism* y micro-animaciones interactivas), Aetheria sumerge al usuario en un santuario digital para consultar oráculos y descifrar el destino.
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## ✨ Características Principales
+
+### 1. 🪞 Menú Flotante con Glassmorphism (`Navbar.jsx`)
+- Efecto de desenfoque de fondo ultra-fluido (`backdrop-blur-md bg-opacity-30`).
+- Logotipo **AETHERIA** con monograma astral y brillo en `gold-accent`.
+- Enlaces de navegación con anclaje suave y menú móvil desplegable adaptativo.
+- Botón de llamado a la acción estelar: *"Revelar mi Destino"*.
+
+### 2. 🌠 Lienzo Estelar Interactivo (`StarBackground.jsx`)
+- Fondo animado renderizado en `<canvas>` con estrellas y destellos personalizados.
+- Paleta celestial en tonos oro (`#D4AF37`), cian astral (`#00E5FF`) y violeta místico.
+- Conexión de constelaciones dinámicas y respuesta gravitacional al movimiento del ratón.
+
+### 3. 🔮 Portal Cósmico & Estadísticas (`Hero.jsx`)
+- Título principal de alto impacto visual con gradientes dorados y cian.
+- Anillos animados de geometría sagrada y órbitas celestiales.
+- Métricas astrales en tiempo real (+144,000 lecturas, 88 constelaciones alineadas).
+- Botones de acción directa: *"Consultar Oráculo"* y *"Tirar Cartas"*.
+
+### 4. 📜 Terminal & Altar Digital (`OracleIA.jsx`)
+- Formulario esotérico con ingreso de Nombre, selector de los 12 Signos Zodiacales y Pregunta existencial.
+- Secuencia de **alineación estelar** con astrolabio giratorio y fases de canalización cuántica.
+- Respuesta profética con **efecto de tipeo gradual (typewriter)**, consejo del cosmos, número de destino y botón para reiniciar la consulta.
+
+### 5. 🃏 Lectura del Tarot 3D con Confetti (`TarotSection.jsx`)
+- Tríptico de cartas para **Pasado**, **Presente** y **Futuro**.
+- Reverso de carta ilustrado con sigilos dorados y ojo de la sabiduría.
+- Animación realista de **Flip 3D** en cada carta utilizando `framer-motion` (`rotateY: 180`).
+- Celebración de fuegos artificiales cósmicos con `canvas-confetti` al revelar las 3 cartas.
+- Función de *"Barajar y Nueva Tirada"* para explorar diferentes arcanos mayores.
+
+### 6. 🪐 Tránsitos Planetarios Activos (`PlanetaryTransits.jsx`)
+- Monitoreo en tiempo real de la posición de Júpiter, Saturno, Plutón y la fase lunar.
+- Indicadores de grados zodiacales, estado directo/retrógrado y su vibración energética.
+
+### 7. 💎 Membresías & Planes Celestiales (`Pricing.jsx`)
+- 3 Niveles de acceso: **Pase Astral** (Gratis), **Iniciado Neófito** ($12/mes) y **Místico Supremo VIP** ($29/mes).
+- Plan VIP destacado con borde resplandeciente en oro, insignia de *"Más Popular"* y beneficios exclusivos.
+- Selector dinámico de facturación mensual y anual con descuento del 25%.
+
+### 8. 💬 Ecos del Cosmos (`Testimonials.jsx`)
+- Reseñas iniciáticas con calificaciones de 5 estrellas místicas.
+- Avatares con auras cibernéticas iluminadas y detalles del signo ascendente de los consultantes.
+
+### 9. 🏛️ Santuario Footer (`Footer.jsx`)
+- Formulario de suscripción a la newsletter del *"Horóscopo Semanal IA"*.
+- Enlaces rápidos de navegación y catálogo de herramientas astrológicas.
+- Declaración de código de ética oracular y avisos de privacidad esotérica.
+
+---
+
+## 🛠️ Stack Tecnológico
+
+| Tecnología | Rol en el Proyecto |
+| :--- | :--- |
+| **React 19** | Biblioteca declarativa de interfaces de usuario |
+| **Vite 8** | Entorno de desarrollo ultrarrápido y empaquetador de producción |
+| **Tailwind CSS 3.4** | Sistema de diseño de utilidades con paleta personalizada |
+| **Framer Motion** | Animaciones 3D e interacciones fluidas de cartas |
+| **Lucide React** | Iconografía mística, cósmica y funcional |
+| **Canvas-Confetti** | Partículas y destellos estelares de celebración |
+| **Google Fonts** | Tipografías *Cinzel* (elegancia mística) y *Outfit* (lectura moderna) |
+
+---
+
+## 🚀 Instalación y Ejecución Local
+
+Sigue estos pasos para clonar y levantar el proyecto en tu entorno local:
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/DevSuarez05/esoteric-landing.git
+cd esoteric-landing
+```
+
+### 2. Instalar dependencias
+```bash
+npm install
+```
+
+### 3. Iniciar el servidor de desarrollo
+```bash
+npm run dev
+```
+Abre en tu navegador la URL que muestra la terminal (por defecto: `http://localhost:5173`).
+
+### 4. Compilar para producción
+```bash
+npm run build
+```
+
+### 5. Verificar código con linter
+```bash
+npm run lint
+```
+
+---
+
+## 📁 Estructura del Proyecto
+
+```text
+esoteric-landing/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── assets/             # Recursos estáticos
+│   ├── components/
+│   │   ├── CommunitySection.jsx # Círculo esotérico y comunidad
+│   │   ├── Footer.jsx           # Pie de página y newsletter
+│   │   ├── Hero.jsx             # Portada mística principal
+│   │   ├── Navbar.jsx           # Navegación flotante glassmorphism
+│   │   ├── OracleIA.jsx         # Altar digital y terminal oracular
+│   │   ├── PlanetaryTransits.jsx# Tránsitos planetarios en vivo
+│   │   ├── Pricing.jsx          # Planes de membresía celestial
+│   │   ├── StarBackground.jsx   # Canvas interactivo de campo estelar
+│   │   ├── TarotSection.jsx     # Tarot 3D Flip con canvas-confetti
+│   │   └── Testimonials.jsx     # Reseñas de iniciados
+│   ├── App.css
+│   ├── App.jsx             # Ensamblaje integral de la landing
+│   ├── index.css           # Directivas Tailwind, fuentes y utilidades 3D
+│   └── main.jsx
+├── index.html              # Tipografías Cinzel / Outfit y metadatos
+├── package.json
+├── tailwind.config.js      # Paleta de colores mística y sombras glowing
+└── README.md
+```
+
+---
+
+## 🎨 Paleta de Colores Mística
+
+- **Dark Mystic (`#0B0914`)**: Profundidad del vacío cósmico.
+- **Purple Glow (`#1E1035`)**: Resplandor nebuloso del éter.
+- **Gold Accent (`#D4AF37`)**: Oro alquímico sagrado.
+- **Astral Cyan (`#00E5FF`)**: Clarividencia y tecnología cuántica.
+
+---
+
+## 🧙‍♂️ Autor & Créditos
+
+Desarrollado con pasión cósmica y código limpio por:
+
+**DevSuarez05**
+- GitHub: [@DevSuarez05](https://github.com/DevSuarez05)
+- Proyecto: [esoteric-landing](https://github.com/DevSuarez05/esoteric-landing)
+
+---
+
+*“Como es arriba, es abajo; como es en la mente, es en la materia.”* ✦

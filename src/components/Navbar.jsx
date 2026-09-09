@@ -17,6 +17,7 @@ export default function Navbar() {
     { name: 'Oráculo IA', href: '#oracle' },
     { name: 'Lectura de Tarot', href: '#tarot' },
     { name: 'Planetas & Tránsitos', href: '#transits' },
+    { name: 'Planes', href: '#pricing' },
     { name: 'Comunidad', href: '#community' },
   ];
 
