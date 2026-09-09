@@ -200,7 +200,7 @@ export default function TarotSection() {
 
                     <div className="text-center">
                       <p className="font-cinzel text-xs tracking-[0.3em] uppercase text-gold-accent font-semibold">
-                        Aetheria Tarot
+                        TarotNauta
                       </p>
                       <p className="text-[11px] text-gray-400 mt-1 font-sans">
                         Toca para revelar

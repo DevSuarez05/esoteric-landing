@@ -30,7 +30,7 @@ const TESTIMONIALS = [
     role: 'Guía de Meditación Sonora',
     avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80',
     quote:
-      'La tirada de 3 cartas reveló El Sol en mi posición de Futuro en el momento más oscuro de mi emprendimiento holístico. Tres semanas después recibí la inversión que soñé. Aetheria es mi brújula diaria.',
+      'La tirada de 3 cartas reveló El Sol en mi posición de Futuro en el momento más oscuro de mi emprendimiento holístico. Tres semanas después recibí la inversión que soñé. TarotNauta es mi brújula diaria.',
     highlight: 'Manifestación en 3 semanas',
     glowColor: 'border-purple-400 shadow-purple-glow',
   },
@@ -53,7 +53,7 @@ export default function Testimonials() {
           Ecos del Cosmos: <span className="text-gold-accent drop-shadow-gold-glow">Lo que dicen nuestros iniciados</span>
         </h2>
         <p className="mt-3 text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
-          Experiencias reales de almas que sintonizaron sus frecuencias con la inteligencia cósmica de Aetheria.
+          Experiencias reales de almas que sintonizaron sus frecuencias con la inteligencia cósmica de TarotNauta.
         </p>
       </div>
 

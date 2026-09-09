@@ -93,7 +93,7 @@ export default function Footer() {
                 <Moon className="w-4 h-4" />
               </div>
               <span className="font-cinzel text-xl font-bold tracking-[0.2em] text-white">
-                AETHERIA
+                TAROTNAUTA
               </span>
             </div>
             <p className="text-xs text-gray-400 leading-relaxed">
@@ -196,7 +196,7 @@ export default function Footer() {
               ))}
             </ul>
             <div className="mt-4 p-3 rounded-xl bg-white/5 border border-white/5 text-[11px] text-gray-500 leading-normal">
-              ✦ Las lecturas e interpretaciones generadas por Aetheria se ofrecen con fines reflexivos, de autoconocimiento y entretenimiento sagrado.
+              ✦ Las lecturas e interpretaciones generadas por TarotNauta se ofrecen con fines reflexivos, de autoconocimiento y entretenimiento sagrado.
             </div>
           </div>
         </div>
@@ -204,7 +204,7 @@ export default function Footer() {
         {/* Bottom Copyright & Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <p>
-            &copy; {new Date().getFullYear()} Aetheria Sanctum. Todos los derechos cósmicos reservados.
+            &copy; {new Date().getFullYear()} TarotNauta. Todos los derechos cósmicos reservados.
           </p>
 
           <p className="flex items-center gap-1">

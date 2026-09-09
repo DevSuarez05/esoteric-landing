@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Sparkles } from 'lucide-react';
 
 const WHATSAPP_URL =
-  'https://wa.me/573218352518?text=Hola%20Aetheria%20%F0%9F%94%AE%2C%20deseo%20agendar%20una%20consulta%20privada%20de%20Tarot%2FOr%C3%A1culo%20VIP.';
+  'https://wa.me/573218352518?text=Hola%20TarotNauta%20%F0%9F%94%AE%2C%20deseo%20agendar%20una%20consulta%20privada%20de%20Tarot%2FOr%C3%A1culo%20VIP.';
 
 export default function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);

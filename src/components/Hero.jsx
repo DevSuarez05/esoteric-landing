@@ -31,7 +31,7 @@ export default function Hero() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-accent"></span>
           </span>
           <span className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold-accent font-semibold">
-            Conexión Astral Activa • Portal 2026
+            Conexión Astral Activa • TarotNauta Portal 2026
           </span>
           <Sparkles className="w-3.5 h-3.5 text-astral-cyan ml-1" />
         </div>
@@ -47,9 +47,7 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl font-light leading-relaxed">
-          Donde las revelaciones milenarias de la astrología caldea convergen con
-          los modelos neuronales de vanguardia. Desbloquea respuestas cuánticas,
-          sincronías universales y tu carta del destino en tiempo real.
+          Bienvenido a <span className="text-gold-accent font-medium">TarotNauta</span>: la nave digital donde las revelaciones milenarias de la astrología caldea y el tarot hermético convergen con los modelos neuronales de vanguardia.
         </p>
 
         {/* Action Buttons */}

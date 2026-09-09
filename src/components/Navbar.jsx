@@ -41,7 +41,7 @@ export default function Navbar() {
             <Sparkles className="w-3.5 h-3.5 text-astral-cyan absolute -top-1 -right-1 animate-pulse" />
           </div>
           <span className="font-cinzel text-xl sm:text-2xl font-bold tracking-[0.22em] text-white group-hover:text-gold-accent transition-colors duration-300 drop-shadow-[0_0_12px_rgba(212,175,55,0.4)]">
-            AETHERIA
+            TAROTNAUTA
           </span>
         </a>
 

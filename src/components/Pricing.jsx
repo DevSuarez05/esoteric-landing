@@ -208,7 +208,7 @@ export default function Pricing() {
 
                 {plan.isPopular && (
                   <a
-                    href="https://wa.me/573218352518?text=Hola%20Aetheria%20%F0%9F%94%AE%2C%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20Plan%20M%C3%ADstico%20Supremo%20VIP."
+                    href="https://wa.me/573218352518?text=Hola%20TarotNauta%20%F0%9F%94%AE%2C%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20Plan%20M%C3%ADstico%20Supremo%20VIP."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-3 w-full py-3 rounded-full font-cinzel text-xs tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2 text-[#25D366] bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/40 hover:border-[#25D366] shadow-sm active:scale-95"

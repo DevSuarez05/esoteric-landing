@@ -1,5 +1,5 @@
-# ✧ AETHERIA ✧
-### *Cyber-Esoteric Landing Page | Oráculo Astral & Tarot con Inteligencia Cósmica*
+# ✧ TAROTNAUTA ✧
+### *Cyber-Esoteric Landing Page | Navega tu Destino con el Oráculo Astral & IA*
 
 [![React](https://img.shields.io/badge/React-19.2.8-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8.2.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
@@ -11,9 +11,9 @@
 
 ## 🌌 Visión del Proyecto
 
-**Aetheria** es una experiencia digital mística donde la sabiduría milenaria de la astrología caldea y el tarot hermético convergen con la vanguardia de los modelos de inteligencia artificial y la física cuántica. 
+**TarotNauta** es una experiencia digital mística donde la sabiduría milenaria de la astrología caldea y el tarot hermético convergen con la vanguardia de los modelos de inteligencia artificial y la física cuántica. 
 
-Diseñada con una estética *cyber-esotérica* de alto impacto visual (modo oscuro profundo, resplandores áureos, tipografía *Cinzel*, efecto de *glassmorphism* y micro-animaciones interactivas), Aetheria sumerge al usuario en un santuario digital para consultar oráculos y descifrar el destino.
+Diseñada con una estética *cyber-esotérica* de alto impacto visual (modo oscuro profundo, resplandores áureos, tipografía *Cinzel*, efecto de *glassmorphism* y micro-animaciones interactivas), TarotNauta sumerge al usuario en un santuario digital para consultar oráculos y descifrar el destino.
 
 ---
 
@@ -21,7 +21,7 @@ Diseñada con una estética *cyber-esotérica* de alto impacto visual (modo oscu
 
 ### 1. 🪞 Menú Flotante con Glassmorphism (`Navbar.jsx`)
 - Efecto de desenfoque de fondo ultra-fluido (`backdrop-blur-md bg-opacity-30`).
-- Logotipo **AETHERIA** con monograma astral y brillo en `gold-accent`.
+- Logotipo **TAROTNAUTA** con monograma astral y brillo en `gold-accent`.
 - Enlaces de navegación con anclaje suave y menú móvil desplegable adaptativo.
 - Botón de llamado a la acción estelar: *"Revelar mi Destino"*.
 
@@ -43,7 +43,7 @@ Diseñada con una estética *cyber-esotérica* de alto impacto visual (modo oscu
 
 ### 5. 🃏 Lectura del Tarot 3D con Confetti (`TarotSection.jsx`)
 - Tríptico de cartas para **Pasado**, **Presente** y **Futuro**.
-- Reverso de carta ilustrado con sigilos dorados y ojo de la sabiduría.
+- Reverso de carta ilustrado con sigilos dorados y ojo de la sabiduría con marca **TarotNauta**.
 - Animación realista de **Flip 3D** en cada carta utilizando `framer-motion` (`rotateY: 180`).
 - Celebración de fuegos artificiales cósmicos con `canvas-confetti` al revelar las 3 cartas.
 - Función de *"Barajar y Nueva Tirada"* para explorar diferentes arcanos mayores.
@@ -54,17 +54,21 @@ Diseñada con una estética *cyber-esotérica* de alto impacto visual (modo oscu
 
 ### 7. 💎 Membresías & Planes Celestiales (`Pricing.jsx`)
 - 3 Niveles de acceso: **Pase Astral** (Gratis), **Iniciado Neófito** ($12/mes) y **Místico Supremo VIP** ($29/mes).
-- Plan VIP destacado con borde resplandeciente en oro, insignia de *"Más Popular"* y beneficios exclusivos.
+- Plan VIP destacado con borde resplandeciente en oro, insignia de *"Más Popular"*, botón secundario de atención VIP por WhatsApp y beneficios exclusivos.
 - Selector dinámico de facturación mensual y anual con descuento del 25%.
 
 ### 8. 💬 Ecos del Cosmos (`Testimonials.jsx`)
 - Reseñas iniciáticas con calificaciones de 5 estrellas místicas.
-- Avatares con auras cibernéticas iluminadas y detalles del signo ascendente de los consultantes.
+- Avatares con auras cibernéticas iluminadas y testimonios sobre la precisión de TarotNauta.
 
-### 9. 🏛️ Santuario Footer (`Footer.jsx`)
+### 9. 📱 Botón Flotante de WhatsApp VIP (`WhatsAppButton.jsx`)
+- Botón fijo de conversión rápida con efecto de pulso y tooltip místico.
+- Enlace directo a WhatsApp (+57 321 8352518) con mensaje preconfigurado para consultas VIP.
+
+### 10. 🏛️ Santuario Footer (`Footer.jsx`)
 - Formulario de suscripción a la newsletter del *"Horóscopo Semanal IA"*.
 - Enlaces rápidos de navegación y catálogo de herramientas astrológicas.
-- Declaración de código de ética oracular y avisos de privacidad esotérica.
+- Declaración de código de ética oracular y avisos de privacidad esotérica de TarotNauta.
 
 ---
 
@@ -120,7 +124,7 @@ npm run lint
 ```text
 esoteric-landing/
 ├── public/
-│   └── favicon.svg
+│   └── favicon.svg         # Favicon místico luna y estrella astral
 ├── src/
 │   ├── assets/             # Recursos estáticos
 │   ├── components/
@@ -133,14 +137,16 @@ esoteric-landing/
 │   │   ├── Pricing.jsx          # Planes de membresía celestial
 │   │   ├── StarBackground.jsx   # Canvas interactivo de campo estelar
 │   │   ├── TarotSection.jsx     # Tarot 3D Flip con canvas-confetti
-│   │   └── Testimonials.jsx     # Reseñas de iniciados
+│   │   ├── Testimonials.jsx     # Reseñas de iniciados
+│   │   └── WhatsAppButton.jsx   # Botón flotante de conversión VIP
 │   ├── App.css
 │   ├── App.jsx             # Ensamblaje integral de la landing
 │   ├── index.css           # Directivas Tailwind, fuentes y utilidades 3D
 │   └── main.jsx
-├── index.html              # Tipografías Cinzel / Outfit y metadatos
+├── index.html              # SEO, Open Graph y Google Fonts
 ├── package.json
 ├── tailwind.config.js      # Paleta de colores mística y sombras glowing
+├── vercel.json             # Enrutamiento SPA para despliegue en Vercel
 └── README.md
 ```
 
