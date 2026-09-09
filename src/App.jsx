@@ -7,6 +7,7 @@ import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
 import CommunitySection from './components/CommunitySection';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 export default function App() {
   return (
@@ -40,6 +41,9 @@ export default function App() {
 
       {/* 8. Sanctum Footer with Newsletter & Ethics */}
       <Footer />
+
+      {/* 9. Floating WhatsApp VIP Consultation Button */}
+      <WhatsAppButton />
     </div>
   );
 }
