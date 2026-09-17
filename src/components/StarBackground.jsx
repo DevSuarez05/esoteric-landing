@@ -92,21 +92,6 @@ export default function StarBackground() {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Draw faint nebular ambient tint
-      const centerGrad = ctx.createRadialGradient(
-        width / 2,
-        height * 0.4,
-        100,
-        width / 2,
-        height * 0.4,
-        Math.max(width, height) * 0.8
-      );
-      centerGrad.addColorStop(0, 'rgba(30, 16, 53, 0.4)');
-      centerGrad.addColorStop(0.5, 'rgba(11, 9, 20, 0.2)');
-      centerGrad.addColorStop(1, 'rgba(11, 9, 20, 0)');
-      ctx.fillStyle = centerGrad;
-      ctx.fillRect(0, 0, width, height);
-
       // Draw constellation connections between nearby stars
       for (let i = 0; i < stars.length; i++) {
         for (let j = i + 1; j < stars.length; j++) {
@@ -192,7 +177,7 @@ export default function StarBackground() {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="fixed inset-0 w-full h-full pointer-events-none z-0"
+      className="fixed inset-0 w-full h-full pointer-events-none z-[3]"
     />
   );
 }

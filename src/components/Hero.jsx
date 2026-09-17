@@ -5,23 +5,38 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative isolate min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+      >
+        <source src="/video.mp4" type="video/mp4" />
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
+
+      {/* Subtle mystic overlay for readability */}
+      <div className="absolute inset-0 z-[1] bg-black/40 pointer-events-none" />
+
       {/* Dynamic Star Field Canvas */}
       <StarBackground />
 
       {/* Atmospheric Glowing Orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] h-[550px] sm:h-[750px] bg-gradient-to-tr from-purple-glow via-[#3b1263]/25 to-transparent rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse-slow" />
-      <div className="absolute bottom-10 left-1/4 w-[350px] h-[350px] bg-astral-cyan/10 rounded-full blur-[100px] pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-1/4 w-[380px] h-[380px] bg-gold-accent/10 rounded-full blur-[110px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] h-[550px] sm:h-[750px] bg-gradient-to-tr from-purple-glow via-[#3b1263]/20 to-transparent rounded-full blur-[120px] pointer-events-none z-[2] animate-pulse-slow" />
+      <div className="absolute bottom-10 left-1/4 w-[350px] h-[350px] bg-astral-cyan/10 rounded-full blur-[100px] pointer-events-none z-[2]" />
+      <div className="absolute top-1/3 right-1/4 w-[380px] h-[380px] bg-gold-accent/10 rounded-full blur-[110px] pointer-events-none z-[2]" />
 
       {/* Sacred Geometry Ambient Circles */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[560px] md:w-[720px] h-[340px] sm:h-[560px] md:h-[720px] border border-gold-accent/15 rounded-full pointer-events-none -z-10 animate-spin" style={{ animationDuration: '60s' }}>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[560px] md:w-[720px] h-[340px] sm:h-[560px] md:h-[720px] border border-gold-accent/15 rounded-full pointer-events-none z-[2] animate-spin" style={{ animationDuration: '60s' }}>
         <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gold-accent/60 shadow-[0_0_12px_#D4AF37]" />
         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-astral-cyan/60 shadow-[0_0_12px_#00E5FF]" />
       </div>
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] sm:w-[420px] md:w-[540px] h-[260px] sm:h-[420px] md:h-[540px] border border-dashed border-astral-cyan/15 rounded-full pointer-events-none -z-10 animate-spin" style={{ animationDuration: '45s', animationDirection: 'reverse' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] sm:w-[420px] md:w-[540px] h-[260px] sm:h-[420px] md:h-[540px] border border-dashed border-astral-cyan/15 rounded-full pointer-events-none z-[2] animate-spin" style={{ animationDuration: '45s', animationDirection: 'reverse' }} />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
         {/* Mystic Status Badge */}
