@@ -3,7 +3,6 @@ import Hero from './components/Hero';
 import OracleIA from './components/OracleIA';
 import TarotSection from './components/TarotSection';
 import PlanetaryTransits from './components/PlanetaryTransits';
-import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
 import CommunitySection from './components/CommunitySection';
 import Footer from './components/Footer';
@@ -20,7 +19,7 @@ export default function App() {
         {/* 1. Hero with dynamic StarBackground canvas */}
         <Hero />
 
-        {/* 2. Oracle AI Altar */}
+        {/* 2. Oracle AI Altar - 1ª Pregunta Gratis Lead Magnet */}
         <OracleIA />
 
         {/* 3. 3-Card Tarot Reading with 3D Flip & Confetti */}
@@ -29,13 +28,10 @@ export default function App() {
         {/* 4. Active Planetary Transits & Astrogram */}
         <PlanetaryTransits />
 
-        {/* 5. Pricing & Celestial Access Plans */}
-        <Pricing />
-
-        {/* 6. Testimonials & Ecos del Cosmos */}
+        {/* 5. Testimonials & Ecos del Cosmos */}
         <Testimonials />
 
-        {/* 7. Community & Global Esoteric Circle */}
+        {/* 6. Community & Global Esoteric Circle */}
         <CommunitySection />
       </main>
 

@@ -14,10 +14,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Oráculo IA', href: '#oracle' },
+    { name: '1ª Pregunta Gratis', href: '#oracle' },
     { name: 'Lectura de Tarot', href: '#tarot' },
     { name: 'Planetas & Tránsitos', href: '#transits' },
-    { name: 'Planes', href: '#pricing' },
+    { name: 'Testimonios', href: '#testimonials' },
     { name: 'Comunidad', href: '#community' },
   ];
 
@@ -80,7 +80,7 @@ export default function Navbar() {
           >
             <span className="px-5 py-2 transition-all ease-in duration-200 bg-[#0B0914] rounded-full group-hover:bg-opacity-0 text-white group-hover:text-black font-cinzel tracking-wider flex items-center gap-1.5 font-bold">
               <Sparkles className="w-3.5 h-3.5 text-gold-accent group-hover:text-black transition-colors" />
-              Revelar mi Destino
+              1ª Pregunta Gratis
             </span>
           </a>
         </div>
@@ -129,7 +129,7 @@ export default function Navbar() {
             className="w-full text-center py-2.5 rounded-full bg-gradient-to-r from-gold-accent to-astral-cyan text-black font-cinzel font-bold text-xs tracking-wider shadow-gold-glow flex items-center justify-center gap-2"
           >
             <Sparkles className="w-4 h-4 text-black" />
-            Revelar mi Destino
+            🎁 1ª Pregunta Gratis
           </a>
         </div>
       )}

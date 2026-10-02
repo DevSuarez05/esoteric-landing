@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Sparkles } from 'lucide-react';
 
 const WHATSAPP_URL =
-  'https://wa.me/573218352518?text=Hola%20TarotNauta%20%F0%9F%94%AE%2C%20deseo%20agendar%20una%20consulta%20privada%20de%20Tarot%2FOr%C3%A1culo%20VIP.';
+  'https://wa.me/573218352518?text=Hola%20TarotNauta%20%F0%9F%94%AE%2C%20deseo%20agendar%20una%20consulta%20personalizada%20de%20Tarot%20en%20vivo%20para%20resolver%20mis%20dudas.';
 
 export default function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
@@ -19,7 +19,7 @@ export default function WhatsAppButton() {
       >
         <Sparkles className="w-3.5 h-3.5 text-gold-accent animate-pulse" />
         <span className="font-semibold text-gold-accent tracking-wide">
-          Hablar con el Oráculo VIP 🔮
+          Consulta Personalizada 1 a 1 🔮
         </span>
       </div>
 

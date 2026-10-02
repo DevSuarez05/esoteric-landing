@@ -40,29 +40,29 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
         {/* Mystic Status Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-accent/30 bg-[#0B0914]/80 backdrop-blur-md mb-8 shadow-gold-glow animate-float">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-accent/40 bg-[#0B0914]/85 backdrop-blur-md mb-8 shadow-gold-glow animate-float">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-accent"></span>
           </span>
-          <span className="font-cinzel text-xs uppercase tracking-[0.25em] text-gold-accent font-semibold">
-            Conexión Astral Activa • TarotNauta Portal 2026
+          <span className="font-cinzel text-xs uppercase tracking-[0.2em] text-gold-accent font-bold">
+            🎁 1ª Pregunta 100% Gratis • Consulta de Tarot en Vivo
           </span>
           <Sparkles className="w-3.5 h-3.5 text-astral-cyan ml-1" />
         </div>
 
         {/* Main Headline */}
         <h1 className="font-cinzel text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] max-w-4xl drop-shadow-2xl">
-          Descifra tu Futuro con el{' '}
+          Descubre tu Destino con tu{' '}
           <span className="bg-gradient-to-r from-gold-accent via-[#FFE28A] to-astral-cyan bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(212,175,55,0.45)]">
-            Oráculo Astral
+            Primera Pregunta Gratis
           </span>{' '}
-          e Inteligencia Cósmica
+          y Consulta Personalizada
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl font-light leading-relaxed">
-          Bienvenido a <span className="text-gold-accent font-medium">TarotNauta</span>: la nave digital donde las revelaciones milenarias de la astrología caldea y el tarot hermético convergen con los modelos neuronales de vanguardia.
+        <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl font-light leading-relaxed">
+          Formula tu primera pregunta sin costo al Oráculo. Recibe un diagnóstico preliminar y continúa hacia una <strong className="text-gold-accent font-medium">lectura en vivo 1 a 1</strong> con nuestros maestros para resolver tus dudas de amor, finanzas y futuro.
         </p>
 
         {/* Action Buttons */}
@@ -72,17 +72,27 @@ export default function Hero() {
             className="w-full sm:w-auto px-8 py-4 rounded-full font-cinzel text-sm sm:text-base font-bold tracking-widest text-black bg-gradient-to-r from-gold-accent via-[#FFDF73] to-gold-accent hover:brightness-110 shadow-gold-glow hover:shadow-[0_0_35px_rgba(212,175,55,0.7)] transition-all duration-300 flex items-center justify-center gap-2.5 group active:scale-95"
           >
             <Sparkles className="w-4 h-4 text-black group-hover:rotate-12 transition-transform" />
-            Consultar Oráculo
+            Hacer mi 1ª Pregunta Gratis
           </a>
 
           <a
-            href="#tarot"
+            href="https://wa.me/573218352518?text=Hola%20TarotNauta%20%F0%9F%94%AE%2C%20deseo%20agendar%20una%20consulta%20personalizada%20de%20Tarot%20en%20vivo%201%20a%201."
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto px-8 py-4 rounded-full font-cinzel text-sm sm:text-base font-semibold tracking-widest text-white backdrop-blur-md bg-white/5 border border-astral-cyan/40 hover:border-astral-cyan hover:bg-astral-cyan/10 shadow-cyan-glow transition-all duration-300 flex items-center justify-center gap-2.5 group active:scale-95"
           >
             <Eye className="w-4 h-4 text-astral-cyan group-hover:scale-110 transition-transform" />
-            Tirar Cartas
+            Consulta Personalizada en Vivo
           </a>
         </div>
+
+        <p className="mt-4 text-xs text-gray-400 font-sans flex items-center gap-2">
+          <span>✨ Sin registros complejos</span>
+          <span>•</span>
+          <span>🔒 100% Confidencial</span>
+          <span>•</span>
+          <span>💬 Atención directa por WhatsApp</span>
+        </p>
 
         {/* Celestial Stats Ribbon */}
         <div className="mt-16 sm:mt-20 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-12 pt-8 border-t border-white/10 w-full max-w-3xl">

@@ -13,11 +13,11 @@ export default function Footer() {
 
   const quickLinks = [
     { name: 'Inicio', href: '#' },
-    { name: 'Oráculo IA', href: '#oracle' },
+    { name: '1ª Pregunta Gratis', href: '#oracle' },
     { name: 'Lectura de Tarot', href: '#tarot' },
     { name: 'Tránsitos Planetarios', href: '#transits' },
-    { name: 'Membresías & Planes', href: '#pricing' },
     { name: 'Testimonios', href: '#testimonials' },
+    { name: 'Comunidad', href: '#community' },
   ];
 
   const oracleTools = [
