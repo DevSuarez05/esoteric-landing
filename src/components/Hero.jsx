@@ -1,46 +1,45 @@
-import { Sparkles, Eye, ArrowDown } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Sparkles, Eye, ArrowDown, Play, Volume2, ShieldCheck, Heart, UserMinus, ShieldAlert } from 'lucide-react';
 import StarBackground from './StarBackground';
 
 export default function Hero() {
+  const [hasStarted, setHasStarted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+
+  const handleStartVideo = () => {
+    if (!videoRef.current) return;
+
+    videoRef.current.muted = false;
+    videoRef.current.currentTime = 0;
+    videoRef.current
+      .play()
+      .then(() => {
+        setHasStarted(true);
+        setIsPlaying(true);
+      })
+      .catch((err) => {
+        // Fallback if browser blocks unmuted autoplay without full gesture
+        console.warn('Playback error:', err);
+        setHasStarted(true);
+      });
+  };
+
   return (
     <section
       id="hero"
-      className="relative isolate min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative isolate min-h-screen flex flex-col items-center justify-center pt-28 sm:pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#07050E]"
     >
-      {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
-      >
-        <source src="/video.mp4" type="video/mp4" />
-        <source src="/hero-bg.mp4" type="video/mp4" />
-      </video>
-
-      {/* Subtle mystic overlay for readability */}
-      <div className="absolute inset-0 z-[1] bg-black/40 pointer-events-none" />
-
       {/* Dynamic Star Field Canvas */}
       <StarBackground />
 
-      {/* Atmospheric Glowing Orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] h-[550px] sm:h-[750px] bg-gradient-to-tr from-purple-glow via-[#3b1263]/20 to-transparent rounded-full blur-[120px] pointer-events-none z-[2] animate-pulse-slow" />
-      <div className="absolute bottom-10 left-1/4 w-[350px] h-[350px] bg-astral-cyan/10 rounded-full blur-[100px] pointer-events-none z-[2]" />
-      <div className="absolute top-1/3 right-1/4 w-[380px] h-[380px] bg-gold-accent/10 rounded-full blur-[110px] pointer-events-none z-[2]" />
+      {/* Atmospheric Glowing Accents */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[800px] h-[550px] sm:h-[600px] bg-gradient-to-tr from-purple-900/20 via-gold-accent/10 to-transparent rounded-full blur-[140px] pointer-events-none z-[1]" />
+      <div className="absolute top-1/2 left-1/4 w-[350px] h-[350px] bg-astral-cyan/5 rounded-full blur-[120px] pointer-events-none z-[1]" />
 
-      {/* Sacred Geometry Ambient Circles */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[560px] md:w-[720px] h-[340px] sm:h-[560px] md:h-[720px] border border-gold-accent/15 rounded-full pointer-events-none z-[2] animate-spin" style={{ animationDuration: '60s' }}>
-        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gold-accent/60 shadow-[0_0_12px_#D4AF37]" />
-        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-astral-cyan/60 shadow-[0_0_12px_#00E5FF]" />
-      </div>
-
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] sm:w-[420px] md:w-[540px] h-[260px] sm:h-[420px] md:h-[540px] border border-dashed border-astral-cyan/15 rounded-full pointer-events-none z-[2] animate-spin" style={{ animationDuration: '45s', animationDirection: 'reverse' }} />
-
-      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center w-full">
         {/* Mystic Status Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-accent/40 bg-[#0B0914]/90 backdrop-blur-md mb-8 shadow-gold-glow animate-float">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-accent/40 bg-[#0B0914]/90 backdrop-blur-md mb-6 shadow-gold-glow animate-float">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-accent"></span>
@@ -51,8 +50,8 @@ export default function Hero() {
           <Sparkles className="w-3.5 h-3.5 text-astral-cyan ml-1" />
         </div>
 
-        {/* Main Headline */}
-        <h1 className="font-cinzel text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] max-w-4xl drop-shadow-2xl">
+        {/* 1. Main Headline (Arriba del video) */}
+        <h1 className="font-cinzel text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.15] max-w-4xl drop-shadow-2xl">
           Trato con{' '}
           <span className="bg-gradient-to-r from-gold-accent via-[#FFE28A] to-astral-cyan bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(212,175,55,0.45)]">
             Magia Blanca
@@ -60,29 +59,82 @@ export default function Hero() {
           los Casos Más Difíciles
         </h1>
 
-        {/* Subtitle */}
-        <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl font-light leading-relaxed">
-          Atraigo al ser amado rindiéndolo a su voluntad, sin hacerle daño y sin que nadie se dé cuenta. Alejo a personas indeseables y curo maleficios, hechizos, brujería y salamientos. <strong className="text-gold-accent font-medium">Primera consulta y diagnóstico gratis.</strong>
+        {/* 2. Subtítulo persuasivo con alto contraste */}
+        <p className="mt-4 sm:mt-6 text-sm sm:text-lg md:text-xl text-gray-200 max-w-3xl font-light leading-relaxed">
+          Atraigo al ser amado rindiéndolo a su voluntad, sin hacerle daño y sin que nadie se dé cuenta. Alejo a personas indeseables y curo maleficios, hechizos, brujería y salamientos. <strong className="text-gold-accent font-semibold">Tu primera pregunta y diagnóstico son 100% gratuitos.</strong>
         </p>
 
         {/* Quick Flyer Highlights Chips */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 max-w-2xl">
-          <span className="px-3.5 py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs font-cinzel">
-            ❤️ Atraigo al Ser Amado
+        <div className="mt-5 mb-8 sm:mb-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-3xl">
+          <span className="px-3.5 py-1.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs font-cinzel flex items-center gap-1.5">
+            <Heart className="w-3.5 h-3.5" />
+            <span>Atraigo al Ser Amado</span>
           </span>
-          <span className="px-3.5 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 text-xs font-cinzel">
-            🚫 Alejo al Ser Indeseable
+          <span className="px-3.5 py-1.5 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 text-xs font-cinzel flex items-center gap-1.5">
+            <UserMinus className="w-3.5 h-3.5" />
+            <span>Alejo al Ser Indeseable</span>
           </span>
-          <span className="px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-cinzel">
-            🛡️ Curo Maleficios & Brujería
+          <span className="px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-cinzel flex items-center gap-1.5">
+            <ShieldAlert className="w-3.5 h-3.5" />
+            <span>Curo Maleficios & Brujería</span>
           </span>
-          <span className="px-3.5 py-1 rounded-full bg-gold-accent/15 border border-gold-accent/30 text-gold-accent text-xs font-cinzel">
-            ✨ 1ª Pregunta Gratis
+          <span className="px-3.5 py-1.5 rounded-full bg-gold-accent/15 border border-gold-accent/40 text-gold-accent text-xs font-cinzel font-bold flex items-center gap-1.5 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>1ª Pregunta Gratis</span>
           </span>
         </div>
 
-        {/* Action Buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">
+        {/* 3. REPRODUCTOR DE VIDEO ESTILO SKOOL (Centro) */}
+        <div className="w-full max-w-4xl relative mx-auto group">
+          {/* Subtle Ambient Glow behind card */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-gold-accent/20 via-purple-600/15 to-astral-cyan/20 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+          {/* Video Container Card */}
+          <div className="relative aspect-video w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0A0714] border border-[#D4AF37]/30 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(212,175,55,0.15)] flex items-center justify-center">
+            {/* HTML5 Video */}
+            <video
+              ref={videoRef}
+              playsInline
+              controls={hasStarted}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+              className="w-full h-full object-cover"
+              poster="/favicon.svg"
+            >
+              <source src="/video.mp4" type="video/mp4" />
+              <source src="/hero-bg.mp4" type="video/mp4" />
+              Tu navegador no soporta la reproducción de video HTML5.
+            </video>
+
+            {/* Skool-Style Interactive Overlay (Shown before clicking Play) */}
+            {!hasStarted && (
+              <div
+                onClick={handleStartVideo}
+                className="absolute inset-0 bg-black/45 backdrop-blur-[2px] flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:bg-black/35 select-none"
+              >
+                {/* Large Glassmorphism Play Button */}
+                <div className="relative flex items-center justify-center">
+                  {/* Outer pulsating ring */}
+                  <span className="absolute w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gold-accent/25 animate-ping pointer-events-none" />
+
+                  {/* Main Play Circle */}
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full backdrop-blur-xl bg-white/20 hover:bg-white/30 border-2 border-white/50 shadow-[0_0_40px_rgba(212,175,55,0.6)] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 active:scale-95">
+                    <Play className="w-8 h-8 sm:w-10 sm:h-10 text-white fill-gold-accent ml-1 drop-shadow-md" />
+                  </div>
+                </div>
+
+                {/* Floating Sound Prompt Badge */}
+                <div className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0B0914]/90 border border-gold-accent/40 text-gold-accent text-xs font-cinzel font-semibold tracking-wider shadow-lg hover:border-gold-accent transition-colors">
+                  <Volume2 className="w-4 h-4 animate-bounce" />
+                  <span>Toca para ver el video con audio</span>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* 4. Action Buttons (Debajo del video) */}
+        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">
           <a
             href="#oracle"
             className="w-full sm:w-auto px-8 py-4 rounded-full font-cinzel text-sm sm:text-base font-bold tracking-widest text-black bg-gradient-to-r from-gold-accent via-[#FFDF73] to-gold-accent hover:brightness-110 shadow-gold-glow hover:shadow-[0_0_35px_rgba(212,175,55,0.7)] transition-all duration-300 flex items-center justify-center gap-2.5 group active:scale-95"
@@ -102,7 +154,8 @@ export default function Hero() {
           </a>
         </div>
 
-        <p className="mt-4 text-xs text-gray-400 font-sans flex items-center gap-2">
+        {/* Reassurance text */}
+        <p className="mt-4 text-xs text-gray-400 font-sans flex items-center justify-center gap-2">
           <span>✨ Sin registros complejos</span>
           <span>•</span>
           <span>🔒 100% Confidencial</span>
@@ -110,44 +163,16 @@ export default function Hero() {
           <span>💬 Atención directa por WhatsApp</span>
         </p>
 
-        {/* Celestial Stats Ribbon */}
-        <div className="mt-16 sm:mt-20 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-12 pt-8 border-t border-white/10 w-full max-w-3xl">
-          <div className="text-center">
-            <p className="font-cinzel text-2xl sm:text-3xl font-bold text-gold-accent">
-              +144,000
-            </p>
-            <p className="text-xs sm:text-sm text-gray-400 mt-1 uppercase tracking-wider">
-              Lecturas Cósmicas
-            </p>
-          </div>
-          <div className="text-center">
-            <p className="font-cinzel text-2xl sm:text-3xl font-bold text-astral-cyan">
-              88
-            </p>
-            <p className="text-xs sm:text-sm text-gray-400 mt-1 uppercase tracking-wider">
-              Constelaciones Alineadas
-            </p>
-          </div>
-          <div className="text-center col-span-2 sm:col-span-1">
-            <p className="font-cinzel text-2xl sm:text-3xl font-bold text-purple-300">
-              99.4%
-            </p>
-            <p className="text-xs sm:text-sm text-gray-400 mt-1 uppercase tracking-wider">
-              Resonancia Espiritual
-            </p>
-          </div>
-        </div>
-
         {/* Subtle scroll down indicator */}
         <a
-          href="#oracle"
-          aria-label="Ir a la siguiente sección"
-          className="mt-12 text-gray-400 hover:text-gold-accent transition-colors flex flex-col items-center gap-1.5 animate-bounce"
+          href="#services"
+          aria-label="Ir a los servicios"
+          className="mt-10 sm:mt-12 text-gray-400 hover:text-gold-accent transition-colors flex flex-col items-center gap-1.5 animate-bounce"
         >
-          <span className="text-[10px] tracking-[0.2em] uppercase font-cinzel text-gray-400">
-            Explorar Misterios
+          <span className="text-[10px] tracking-[0.25em] uppercase font-cinzel text-gray-400">
+            Ver Servicios Espirituales
           </span>
-          <ArrowDown className="w-4 h-4" />
+          <ArrowDown className="w-4 h-4 text-gold-accent" />
         </a>
       </div>
     </section>
