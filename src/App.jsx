@@ -2,7 +2,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import OracleIA from './components/OracleIA';
 import TarotSection from './components/TarotSection';
-import PlanetaryTransits from './components/PlanetaryTransits';
 import Testimonials from './components/Testimonials';
 import CommunitySection from './components/CommunitySection';
 import Footer from './components/Footer';
@@ -25,13 +24,10 @@ export default function App() {
         {/* 3. 3-Card Tarot Reading with 3D Flip & Confetti */}
         <TarotSection />
 
-        {/* 4. Active Planetary Transits & Astrogram */}
-        <PlanetaryTransits />
-
-        {/* 5. Testimonials & Ecos del Cosmos */}
+        {/* 4. Testimonials & Ecos del Cosmos */}
         <Testimonials />
 
-        {/* 6. Community & Global Esoteric Circle */}
+        {/* 5. Community & Global Esoteric Circle */}
         <CommunitySection />
       </main>
 

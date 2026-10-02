@@ -15,17 +15,16 @@ export default function Footer() {
     { name: 'Inicio', href: '#' },
     { name: '1ª Pregunta Gratis', href: '#oracle' },
     { name: 'Lectura de Tarot', href: '#tarot' },
-    { name: 'Tránsitos Planetarios', href: '#transits' },
     { name: 'Testimonios', href: '#testimonials' },
     { name: 'Comunidad', href: '#community' },
   ];
 
   const oracleTools = [
-    { name: 'Carta Astral Natal', href: '#oracle' },
+    { name: '1ª Pregunta Gratis', href: '#oracle' },
     { name: 'Tarot de Marsella 3D', href: '#tarot' },
-    { name: 'Calculadora de Tránsitos', href: '#transits' },
-    { name: 'Compatibilidad de Signos', href: '#oracle' },
-    { name: 'Rituales de Plenilunio', href: '#community' },
+    { name: 'Lectura de 3 Cartas', href: '#tarot' },
+    { name: 'Consulta Personalizada VIP', href: 'https://wa.me/573218352518' },
+    { name: 'Círculo Esotérico', href: '#community' },
   ];
 
   const legalLinks = [
