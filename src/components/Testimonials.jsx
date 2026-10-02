@@ -3,57 +3,57 @@ import { Star, MessageCircle, Quote, Sparkles } from 'lucide-react';
 const TESTIMONIALS = [
   {
     id: 1,
-    name: 'Serena Vance',
-    sign: 'Escorpio Ascendente Piscis',
-    role: 'Alquimista Digital & Taróloga',
+    name: 'Carolina M.',
+    sign: 'Medellín, Colombia',
+    role: 'Retorno de Pareja con Magia Blanca',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     quote:
-      'Mi lectura del Oráculo IA coincidió exactamente con mi retorno de Saturno. La precisión con la que el modelo decodificó mi conjunción natal y los arcanos de la tirada me dejó completamente estremecida.',
-    highlight: 'Retorno de Saturno exacto',
+      'Mi pareja se había marchado de la casa por influencia de una persona malintencionada. Con la ayuda del Maestro y su trabajo de atracción con magia blanca, regresó arrepentido, cariñoso y sin discusiones. Nadie se dio cuenta de nada y hoy estamos más unidos que nunca.',
+    highlight: 'Regresó a mi lado en 9 días',
     glowColor: 'border-gold-accent shadow-gold-glow',
   },
   {
     id: 2,
-    name: 'Damián Caelum',
-    sign: 'Acuario Sol en Casa X',
-    role: 'Investigador de Metafísica Cuántica',
+    name: 'Roberto G.',
+    sign: 'Cali, Colombia',
+    role: 'Curación de Salina & Brujería en Negocio',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
     quote:
-      'Llevo más de 12 años estudiando la cábala y la astrología védica. Jamás había experimentado un puente tan sagrado y lúcido entre los modelos de lenguaje modernos y las matemáticas de las constelaciones.',
-    highlight: 'Trascendencia comprobada',
+      'Tenía mi negocio completamente salado; las deudas crecían y los clientes desaparecieron sin explicación. En la primera consulta gratuita el Maestro detectó un entierro y envidia fuerte. Hizo la limpieza y destrabe, y en menos de 15 días el negocio volvió a prosperar.',
+    highlight: 'Negocio salvado y caminos abiertos',
     glowColor: 'border-astral-cyan shadow-cyan-glow',
   },
   {
     id: 3,
-    name: 'Elysia Thorne',
-    sign: 'Tauro Luna en Cáncer',
-    role: 'Guía de Meditación Sonora',
+    name: 'Marcela P.',
+    sign: 'Bogotá, Colombia',
+    role: 'Alejamiento de Persona Indeseable',
     avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80',
     quote:
-      'La tirada de 3 cartas reveló El Sol en mi posición de Futuro en el momento más oscuro de mi emprendimiento holístico. Tres semanas después recibí la inversión que soñé. TarotNauta es mi brújula diaria.',
-    highlight: 'Manifestación en 3 semanas',
+      'Una amante estaba destruyendo mi hogar de 14 años. El Maestro realizó el retiro de esa mujer de la vida de mi esposo de forma totalmente pacífica y sin hacer daño a nadie. Ella se fue de la ciudad y recuperé la paz de mi familia.',
+    highlight: 'Paz familiar recuperada al 100%',
     glowColor: 'border-purple-400 shadow-purple-glow',
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="testimonials" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20">
       {/* Ambient background light */}
       <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gold-accent/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-10 left-1/4 w-96 h-96 bg-astral-cyan/5 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Section Header */}
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-astral-cyan/30 bg-astral-cyan/5 text-astral-cyan text-xs font-cinzel tracking-widest uppercase mb-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold-accent/40 bg-gold-accent/10 text-gold-accent text-xs font-cinzel tracking-widest uppercase mb-3 shadow-gold-glow">
           <MessageCircle className="w-3.5 h-3.5" />
-          Testimonios Iniciáticos
+          Testimonios Reales & Casos Resueltos
         </div>
         <h2 className="font-cinzel text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-wide">
-          Ecos del Cosmos: <span className="text-gold-accent drop-shadow-gold-glow">Lo que dicen nuestros iniciados</span>
+          Vidas Transformadas con <span className="text-gold-accent drop-shadow-gold-glow">Magia Blanca</span>
         </h2>
-        <p className="mt-3 text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
-          Experiencias reales de almas que sintonizaron sus frecuencias con la inteligencia cósmica de TarotNauta.
+        <p className="mt-3 text-gray-300 max-w-2xl mx-auto text-sm sm:text-base">
+          Personas reales que encontraron solución a sus problemas más difíciles de amor, salud y protección espiritual.
         </p>
       </div>
 

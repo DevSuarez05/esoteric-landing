@@ -16,6 +16,7 @@ export default function Navbar() {
   const navLinks = [
     { name: '1ª Pregunta Gratis', href: '#oracle' },
     { name: 'Lectura de Tarot', href: '#tarot' },
+    { name: 'Servicios Espirituales', href: '#services' },
     { name: 'Testimonios', href: '#testimonials' },
     { name: 'Comunidad', href: '#community' },
   ];

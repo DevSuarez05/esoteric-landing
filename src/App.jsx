@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import OracleIA from './components/OracleIA';
 import TarotSection from './components/TarotSection';
+import ServicesSection from './components/ServicesSection';
 import Testimonials from './components/Testimonials';
 import CommunitySection from './components/CommunitySection';
 import Footer from './components/Footer';
@@ -24,10 +25,13 @@ export default function App() {
         {/* 3. 3-Card Tarot Reading with 3D Flip & Confetti */}
         <TarotSection />
 
-        {/* 4. Testimonials & Ecos del Cosmos */}
+        {/* 4. Servicios Espirituales del Volante (Magia Blanca, Amor, Alejamientos, Maleficios) */}
+        <ServicesSection />
+
+        {/* 5. Testimonials & Ecos del Cosmos */}
         <Testimonials />
 
-        {/* 5. Community & Global Esoteric Circle */}
+        {/* 6. Community & Global Esoteric Circle */}
         <CommunitySection />
       </main>
 
