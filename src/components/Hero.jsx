@@ -40,30 +40,46 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
         {/* Mystic Status Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-accent/40 bg-[#0B0914]/85 backdrop-blur-md mb-8 shadow-gold-glow animate-float">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-accent/40 bg-[#0B0914]/90 backdrop-blur-md mb-8 shadow-gold-glow animate-float">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-accent"></span>
           </span>
           <span className="font-cinzel text-xs uppercase tracking-[0.2em] text-gold-accent font-bold">
-            🎁 1ª Pregunta 100% Gratis • Consulta de Tarot en Vivo
+            🌿 TRATO CON MAGIA BLANCA • CASOS DIFÍCILES • 1ª CONSULTA GRATIS
           </span>
           <Sparkles className="w-3.5 h-3.5 text-astral-cyan ml-1" />
         </div>
 
         {/* Main Headline */}
         <h1 className="font-cinzel text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] max-w-4xl drop-shadow-2xl">
-          Descubre tu Destino con tu{' '}
+          Trato con{' '}
           <span className="bg-gradient-to-r from-gold-accent via-[#FFE28A] to-astral-cyan bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(212,175,55,0.45)]">
-            Primera Pregunta Gratis
+            Magia Blanca
           </span>{' '}
-          y Consulta Personalizada
+          los Casos Más Difíciles
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl font-light leading-relaxed">
-          Formula tu primera pregunta sin costo al Oráculo. Recibe un diagnóstico preliminar y continúa hacia una <strong className="text-gold-accent font-medium">lectura en vivo 1 a 1</strong> con nuestros maestros para resolver tus dudas de amor, finanzas y futuro.
+        <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl font-light leading-relaxed">
+          Atraigo al ser amado rindiéndolo a su voluntad, sin hacerle daño y sin que nadie se dé cuenta. Alejo a personas indeseables y curo maleficios, hechizos, brujería y salamientos. <strong className="text-gold-accent font-medium">Primera consulta y diagnóstico gratis.</strong>
         </p>
+
+        {/* Quick Flyer Highlights Chips */}
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 max-w-2xl">
+          <span className="px-3.5 py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs font-cinzel">
+            ❤️ Atraigo al Ser Amado
+          </span>
+          <span className="px-3.5 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 text-xs font-cinzel">
+            🚫 Alejo al Ser Indeseable
+          </span>
+          <span className="px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-cinzel">
+            🛡️ Curo Maleficios & Brujería
+          </span>
+          <span className="px-3.5 py-1 rounded-full bg-gold-accent/15 border border-gold-accent/30 text-gold-accent text-xs font-cinzel">
+            ✨ 1ª Pregunta Gratis
+          </span>
+        </div>
 
         {/* Action Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">

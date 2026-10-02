@@ -19,14 +19,14 @@ export default function App() {
         {/* 1. Hero with dynamic StarBackground canvas */}
         <Hero />
 
-        {/* 2. Oracle AI Altar - 1ª Pregunta Gratis Lead Magnet */}
+        {/* 2. Servicios Espirituales del Volante (Magia Blanca, Amor, Alejamientos, Maleficios) */}
+        <ServicesSection />
+
+        {/* 3. Oracle AI Altar - 1ª Pregunta Gratis Lead Magnet */}
         <OracleIA />
 
-        {/* 3. 3-Card Tarot Reading with 3D Flip & Confetti */}
+        {/* 4. 3-Card Tarot Reading with 3D Flip & Confetti */}
         <TarotSection />
-
-        {/* 4. Servicios Espirituales del Volante (Magia Blanca, Amor, Alejamientos, Maleficios) */}
-        <ServicesSection />
 
         {/* 5. Testimonials & Ecos del Cosmos */}
         <Testimonials />
