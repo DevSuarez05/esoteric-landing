@@ -96,7 +96,10 @@ export default function Hero() {
           <div className="absolute -inset-2 bg-gradient-to-b from-gold-accent/25 via-purple-600/20 to-astral-cyan/20 rounded-[2.5rem] blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
           {/* Video Container Card with Complete Frame / Cuadrícula */}
-          <div className="relative aspect-[464/832] w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-[#07050E] border-2 border-gold-accent/40 shadow-[0_25px_60px_rgba(0,0,0,0.9),0_0_35px_rgba(212,175,55,0.25)] flex items-center justify-center">
+          <div
+            style={{ aspectRatio: '464 / 832', maxHeight: '78vh' }}
+            className="relative w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-[#07050E] border-2 border-gold-accent/40 shadow-[0_25px_60px_rgba(0,0,0,0.9),0_0_35px_rgba(212,175,55,0.25)] flex items-center justify-center mx-auto"
+          >
             {/* HTML5 Video - object-contain ensures 100% of video is visible with ZERO cropping */}
             <video
               ref={videoRef}
@@ -105,6 +108,7 @@ export default function Hero() {
               preload="metadata"
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
+              style={{ objectFit: 'contain', width: '100%', height: '100%' }}
               className="w-full h-full object-contain bg-black"
               poster="/logo.png"
             >

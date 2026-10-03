@@ -37,6 +37,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Strict Video Containment - 100% visible, never cropped in any mode or fullscreen */
+video {
+  object-fit: contain !important;
+  background-color: #000000 !important;
+}
+
+video:fullscreen,
+video:-webkit-full-screen,
+:fullscreen video,
+:-webkit-full-screen video {
+  object-fit: contain !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  background-color: #000000 !important;
+}
+
 /* 3D Flip Card Utilities */
 .perspective-1000 {
   perspective: 1000px;
