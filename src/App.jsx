@@ -10,7 +10,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-dark-mystic text-white selection:bg-gold-accent selection:text-black relative">
+    <div className="min-h-screen bg-dark-mystic text-white selection:bg-gold-accent selection:text-black relative w-full max-w-full overflow-x-clip">
       {/* Floating Glassmorphism Navigation */}
       <Navbar />
 

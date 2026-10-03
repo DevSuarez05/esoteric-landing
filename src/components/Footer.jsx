@@ -87,16 +87,25 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 pb-12 border-b border-white/10 text-sm">
           {/* Brand Info */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#1E1035] to-[#0B0914] border border-gold-accent/40 flex items-center justify-center text-gold-accent shadow-gold-glow">
-                <Moon className="w-4 h-4" />
+            <div className="flex items-center gap-3">
+              <div className="w-11 h-11 rounded-full overflow-hidden border border-gold-accent/40 shadow-gold-glow flex items-center justify-center shrink-0 bg-black">
+                <img
+                  src="/logo.png"
+                  alt="TarotNauta Navegante Astral"
+                  className="w-full h-full object-cover object-top scale-[1.35] translate-y-0.5"
+                />
               </div>
-              <span className="font-cinzel text-xl font-bold tracking-[0.2em] text-white">
-                TAROTNAUTA
-              </span>
+              <div className="flex flex-col">
+                <span className="font-cormorant text-2xl font-semibold tracking-[0.18em] text-white leading-tight">
+                  TAROTNAUTA
+                </span>
+                <span className="font-montserrat text-[8px] uppercase tracking-[0.22em] text-gold-accent/90 font-medium">
+                  Tarot • Astrología • Quiromancia
+                </span>
+              </div>
             </div>
-            <p className="text-xs text-gray-400 leading-relaxed">
-              El santuario digital donde las tradiciones esotéricas milenarias convergen con la inteligencia artificial para guiar tu evolución espiritual.
+            <p className="text-xs text-gray-300 leading-relaxed font-serif">
+              Conocimiento para interpretar los símbolos de tu camino. Las tradiciones esotéricas milenarias para guiar tu destino con máxima seriedad y confidencialidad.
             </p>
             {/* Social Icons */}
             <div className="flex items-center gap-3 pt-2">

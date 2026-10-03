@@ -22,7 +22,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 pt-4 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 pt-4 transition-all duration-300 w-full max-w-full">
       <nav
         aria-label="Navegación principal"
         className={`max-w-7xl mx-auto rounded-full px-5 sm:px-7 py-3 flex items-center justify-between transition-all duration-300 backdrop-blur-md bg-[#0B0914]/40 border border-white/10 ${
@@ -34,15 +34,23 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#"
-          className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent rounded-lg py-1"
+          className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent rounded-lg py-1"
         >
-          <div className="relative flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-br from-[#1E1035] to-[#0B0914] border border-gold-accent/40 shadow-gold-glow group-hover:border-gold-accent group-hover:scale-105 transition-all duration-300">
-            <Moon className="w-4 h-4 text-gold-accent absolute group-hover:rotate-45 transition-transform duration-500" />
-            <Sparkles className="w-3.5 h-3.5 text-astral-cyan absolute -top-1 -right-1 animate-pulse" />
+          <div className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-gold-accent/40 shadow-gold-glow group-hover:border-gold-accent group-hover:scale-105 transition-all duration-300 shrink-0 bg-black">
+            <img
+              src="/logo.png"
+              alt="TarotNauta Navegante Astral"
+              className="w-full h-full object-cover object-top scale-[1.35] translate-y-0.5"
+            />
           </div>
-          <span className="font-cinzel text-xl sm:text-2xl font-bold tracking-[0.22em] text-white group-hover:text-gold-accent transition-colors duration-300 drop-shadow-[0_0_12px_rgba(212,175,55,0.4)]">
-            TAROTNAUTA
-          </span>
+          <div className="flex flex-col text-left">
+            <span className="font-cormorant text-2xl sm:text-3xl font-semibold tracking-[0.18em] text-white group-hover:text-gold-accent transition-colors duration-300 drop-shadow-[0_0_12px_rgba(212,175,55,0.4)] leading-tight">
+              TAROTNAUTA
+            </span>
+            <span className="font-montserrat text-[8px] sm:text-[9px] uppercase tracking-[0.22em] text-gold-accent/90 font-medium hidden xs:block">
+              Tarot • Astrología • Quiromancia
+            </span>
+          </div>
         </a>
 
         {/* Desktop Links */}
@@ -98,7 +106,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2 mx-auto max-w-lg rounded-2xl p-5 backdrop-blur-xl bg-[#0B0914]/90 border border-gold-accent/30 shadow-2xl shadow-black flex flex-col gap-4 animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="md:hidden mt-2 mx-auto w-full max-w-lg rounded-2xl p-5 backdrop-blur-xl bg-[#0B0914]/95 border border-gold-accent/30 shadow-2xl shadow-black flex flex-col gap-4 animate-in fade-in slide-in-from-top-4 duration-200">
           {navLinks.map((link) => (
             <a
               key={link.name}

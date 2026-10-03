@@ -38,7 +38,7 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20">
+    <section id="testimonials" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20 overflow-hidden">
       {/* Ambient background light */}
       <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gold-accent/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-10 left-1/4 w-96 h-96 bg-astral-cyan/5 rounded-full blur-[120px] pointer-events-none" />

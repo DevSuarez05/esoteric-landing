@@ -44,24 +44,24 @@ export default function Hero() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-accent"></span>
           </span>
-          <span className="font-cinzel text-xs uppercase tracking-[0.2em] text-gold-accent font-bold">
+          <span className="font-montserrat text-[11px] sm:text-xs uppercase tracking-[0.2em] text-gold-accent font-semibold">
             🌿 TRATO CON MAGIA BLANCA • CASOS DIFÍCILES • 1ª CONSULTA GRATIS
           </span>
           <Sparkles className="w-3.5 h-3.5 text-astral-cyan ml-1" />
         </div>
 
         {/* 1. Main Headline (Arriba del video) */}
-        <h1 className="font-cinzel text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.15] max-w-4xl drop-shadow-2xl">
+        <h1 className="font-cormorant text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.12] max-w-4xl drop-shadow-2xl">
           Trato con{' '}
-          <span className="bg-gradient-to-r from-gold-accent via-[#FFE28A] to-astral-cyan bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(212,175,55,0.45)]">
+          <span className="text-gold-accent drop-shadow-[0_0_20px_rgba(212,175,55,0.35)]">
             Magia Blanca
           </span>{' '}
           los Casos Más Difíciles
         </h1>
 
         {/* 2. Subtítulo persuasivo con alto contraste */}
-        <p className="mt-4 sm:mt-6 text-sm sm:text-lg md:text-xl text-gray-200 max-w-3xl font-light leading-relaxed">
-          Atraigo al ser amado rindiéndolo a su voluntad, sin hacerle daño y sin que nadie se dé cuenta. Alejo a personas indeseables y curo maleficios, hechizos, brujería y salamientos. <strong className="text-gold-accent font-semibold">Tu primera pregunta y diagnóstico son 100% gratuitos.</strong>
+        <p className="mt-4 sm:mt-6 text-sm sm:text-lg md:text-xl text-gray-200 max-w-3xl leading-relaxed font-serif font-normal">
+          Atraigo al ser amado rindiéndolo a su voluntad, sin hacerle daño y sin que nadie se dé cuenta. Alejo al ser indeseable, malos vecinos y enemigos. Curo maleficios, hechizos, brujería y salamientos. <strong className="text-gold-accent font-semibold">Tu primera pregunta y diagnóstico son 100% gratuitos.</strong>
         </p>
 
         {/* Quick Flyer Highlights Chips */}
@@ -72,7 +72,7 @@ export default function Hero() {
           </span>
           <span className="px-3.5 py-1.5 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 text-xs font-cinzel flex items-center gap-1.5">
             <UserMinus className="w-3.5 h-3.5" />
-            <span>Alejo al Ser Indeseable</span>
+            <span>Alejo al Ser Indeseable, Malos Vecinos & Enemigos</span>
           </span>
           <span className="px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-cinzel flex items-center gap-1.5">
             <ShieldAlert className="w-3.5 h-3.5" />

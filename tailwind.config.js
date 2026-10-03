@@ -13,8 +13,12 @@ export default {
         'astral-cyan': '#00E5FF',
       },
       fontFamily: {
-        cinzel: ['Cinzel', 'serif'],
-        sans: ['Outfit', 'system-ui', 'sans-serif'],
+        cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        baskerville: ['"Libre Baskerville"', 'Georgia', 'serif'],
+        montserrat: ['Montserrat', 'system-ui', 'sans-serif'],
+        cinzel: ['"Cormorant Garamond"', 'Cinzel', 'serif'],
+        serif: ['"Libre Baskerville"', 'Georgia', 'serif'],
+        sans: ['Montserrat', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         'gold-glow': '0 0 25px -5px rgba(212, 175, 55, 0.4)',

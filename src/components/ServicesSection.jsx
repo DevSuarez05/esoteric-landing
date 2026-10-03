@@ -18,14 +18,14 @@ const SERVICES = [
     id: 'alejamiento-terceros',
     icon: UserMinus,
     title: 'Alejamiento de Intrusos',
-    subtitle: 'Separación de Amantes & Personas Indeseables',
-    quote: 'Alejo al ser indeseable o la persona que usted quiera retirar de su vida o de la vida de su pareja.',
+    subtitle: 'Alejo al Ser Indeseable, Malos Vecinos & Enemigos',
+    quote: 'Alejo al ser indeseable, malos vecinos y enemigos que perturben su vida o su relación.',
     description:
-      'Neutralización definitiva de amantes, rivales, malas amistades y familiares destructivos que interfieren en tu relación sentimental o tranquilidad personal. Separación pacífica y definitiva.',
+      'Alejo al ser indeseable, malos vecinos, enemigos, rivales, amantes y malas influencias que interfieren en tu tranquilidad personal o relación sentimental. Separación pacífica y definitiva sin dejar rastros.',
     badge: '100% DISCRETO',
     badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
     iconBg: 'from-purple-500 to-indigo-600',
-    waText: 'Hola Maestro 🔮, deseo consultar por el servicio de ALEJAMIENTO DE PERSONAS INDESEABLES. Mi primera pregunta es gratis.',
+    waText: 'Hola Maestro 🔮, deseo consultar por el servicio de ALEJAMIENTO (Ser indeseable, malos vecinos, enemigos). Mi primera pregunta es gratis.',
   },
   {
     id: 'curacion-brujeria',
@@ -57,7 +57,7 @@ const SERVICES = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20">
+    <section id="services" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20 overflow-hidden">
       {/* Background mystic lights */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-purple-950/20 rounded-full blur-[150px] pointer-events-none" />
 

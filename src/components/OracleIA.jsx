@@ -126,7 +126,7 @@ export default function OracleIA() {
   )}`;
 
   return (
-    <section id="oracle" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto scroll-mt-24">
+    <section id="oracle" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto scroll-mt-24 overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-900/25 rounded-full blur-[100px] pointer-events-none" />
 

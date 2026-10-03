@@ -186,7 +186,7 @@ export default function TarotSection() {
   )}`;
 
   return (
-    <section id="tarot" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto scroll-mt-20">
+    <section id="tarot" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto scroll-mt-20 overflow-hidden">
       {/* Mystic Aura Lights */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-gold-accent/5 rounded-full blur-[120px] pointer-events-none" />
 

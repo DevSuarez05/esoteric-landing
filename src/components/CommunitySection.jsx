@@ -2,7 +2,7 @@ import { Users, ArrowRight, ShieldCheck, Moon } from 'lucide-react';
 
 export default function CommunitySection() {
   return (
-    <section id="community" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+    <section id="community" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto scroll-mt-20 overflow-hidden">
       <div className="relative rounded-3xl p-8 sm:p-12 overflow-hidden bg-gradient-to-b from-[#18112C] to-[#0D0A18] border border-gold-accent/30 shadow-[0_20px_50px_rgba(0,0,0,0.6)] text-center">
         {/* Background celestial ring */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-gold-accent/10 rounded-full blur-3xl pointer-events-none" />
