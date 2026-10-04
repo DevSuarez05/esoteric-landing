@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import {
   Sparkles,
@@ -221,10 +220,9 @@ export default function TarotSection() {
                 onClick={() => handleCardClick(index)}
                 className="relative w-full max-w-[280px] h-[440px] cursor-pointer group select-none"
               >
-                <motion.div
-                  className="w-full h-full transform-style-3d relative"
-                  animate={{ rotateY: item.isFlipped ? 180 : 0 }}
-                  transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+                <div
+                  className="w-full h-full transform-style-3d relative transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
+                  style={{ transform: item.isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
                 >
                   {/* CARD BACK */}
                   <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl bg-gradient-to-br from-[#1A1230] via-[#0E0B1A] to-[#120B24] border-2 border-gold-accent/40 shadow-[0_15px_35px_rgba(0,0,0,0.8)] p-4 flex flex-col justify-between items-center group-hover:border-gold-accent group-hover:shadow-gold-glow transition-all duration-300">
@@ -297,7 +295,7 @@ export default function TarotSection() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </div>
             </div>
           );
