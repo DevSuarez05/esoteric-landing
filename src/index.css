@@ -17,25 +17,26 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
   width: 100%;
-  max-width: 100vw;
-}
-
-html, body, #root {
-  min-height: 100vh;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: clip;
 }
 
 body {
-  background-color: #0B0914;
+  background-color: #07050E;
   color: #ffffff;
   font-family: 'Libre Baskerville', Georgia, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
 }
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 
 /* Strict Video Containment - 100% visible, never cropped in any mode or fullscreen */
 video {
@@ -81,4 +82,13 @@ video:-webkit-full-screen,
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #D4AF37;
+}
+
+
+
+/* GPU promotion for fluid interactions */
+.animate-float,
+.perspective-1000 {
+  transform: translateZ(0);
+  will-change: transform;
 }

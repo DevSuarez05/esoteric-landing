@@ -8,7 +8,7 @@ export default function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center justify-center group">
+    <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center justify-center group mb-[env(safe-area-inset-bottom)]">
       {/* Mystic Tooltip */}
       <div
         className={`absolute right-16 mr-3 px-3.5 py-2 rounded-2xl bg-[#0F0C1E]/95 backdrop-blur-md border border-gold-accent/40 shadow-2xl shadow-black/80 text-xs font-cinzel text-white whitespace-nowrap transition-all duration-300 pointer-events-none flex items-center gap-1.5 ${

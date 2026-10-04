@@ -98,6 +98,10 @@ export default function Testimonials() {
                 <img
                   src={testimonial.avatar}
                   alt={testimonial.name}
+                  width="52"
+                  height="52"
+                  loading="lazy"
+                  decoding="async"
                   className={`w-13 h-13 rounded-full object-cover border-2 ${testimonial.glowColor} transition-transform group-hover:scale-105`}
                 />
                 <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-dark-mystic border border-gold-accent flex items-center justify-center">

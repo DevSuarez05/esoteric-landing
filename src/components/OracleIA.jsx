@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Sparkles, Terminal, RotateCcw, Star, MessageCircle, Lock, ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Sparkles, RotateCcw, Star, MessageCircle, Lock, ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 
 const ZODIAC_SIGNS = [
   { name: 'Aries', symbol: '♈', element: 'Fuego', color: 'from-amber-500 to-red-500' },
@@ -59,7 +59,6 @@ export default function OracleIA() {
   const [prophecy, setProphecy] = useState(null);
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const [freeQuestionUsed, setFreeQuestionUsed] = useState(false);
 
   const resultRef = useRef(null);
 

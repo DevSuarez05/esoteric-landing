@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Moon, Sparkles, Send, CheckCircle2, Shield } from 'lucide-react';
+import { Sparkles, Send, CheckCircle2, Shield } from 'lucide-react';
 
 export default function Footer() {
   const [email, setEmail] = useState('');

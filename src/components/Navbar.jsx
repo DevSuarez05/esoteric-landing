@@ -1,15 +1,22 @@
 import { useState, useEffect } from 'react';
-import { Sparkles, Moon, Menu, X } from 'lucide-react';
+import { Sparkles, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -40,6 +47,9 @@ export default function Navbar() {
             <img
               src="/logo.png"
               alt="TarotNauta Navegante Astral"
+              width="44"
+              height="44"
+              decoding="async"
               className="w-full h-full object-cover object-top scale-[1.35] translate-y-0.5"
             />
           </div>

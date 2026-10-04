@@ -1,16 +1,19 @@
+import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import OracleIA from './components/OracleIA';
-import TarotSection from './components/TarotSection';
 import ServicesSection from './components/ServicesSection';
-import Testimonials from './components/Testimonials';
-import CommunitySection from './components/CommunitySection';
-import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+
+// Code-split below-the-fold components to accelerate initial paint & TTI
+const OracleIA = lazy(() => import('./components/OracleIA'));
+const TarotSection = lazy(() => import('./components/TarotSection'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const CommunitySection = lazy(() => import('./components/CommunitySection'));
+const Footer = lazy(() => import('./components/Footer'));
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-dark-mystic text-white selection:bg-gold-accent selection:text-black relative w-full max-w-full overflow-x-clip">
+    <div className="min-h-screen bg-[#07050E] text-white selection:bg-gold-accent selection:text-black relative w-full max-w-full overflow-x-hidden">
       {/* Floating Glassmorphism Navigation */}
       <Navbar />
 
@@ -22,23 +25,26 @@ export default function App() {
         {/* 2. Servicios Espirituales del Volante (Magia Blanca, Amor, Alejamientos, Maleficios) */}
         <ServicesSection />
 
-        {/* 3. Oracle AI Altar - 1ª Pregunta Gratis Lead Magnet */}
-        <OracleIA />
+        {/* 3. Lazy loaded below-the-fold modules */}
+        <Suspense fallback={<div className="min-h-[200px]" />}>
+          {/* Oracle AI Altar - 1ª Pregunta Gratis Lead Magnet */}
+          <OracleIA />
 
-        {/* 4. 3-Card Tarot Reading with 3D Flip & Confetti */}
-        <TarotSection />
+          {/* 3-Card Tarot Reading with 3D Flip & Confetti */}
+          <TarotSection />
 
-        {/* 5. Testimonials & Ecos del Cosmos */}
-        <Testimonials />
+          {/* Testimonials & Ecos del Cosmos */}
+          <Testimonials />
 
-        {/* 6. Community & Global Esoteric Circle */}
-        <CommunitySection />
+          {/* Community & Global Esoteric Circle */}
+          <CommunitySection />
+
+          {/* Sanctum Footer with Newsletter & Ethics */}
+          <Footer />
+        </Suspense>
       </main>
 
-      {/* 8. Sanctum Footer with Newsletter & Ethics */}
-      <Footer />
-
-      {/* 9. Floating WhatsApp VIP Consultation Button */}
+      {/* Floating WhatsApp VIP Consultation Button */}
       <WhatsAppButton />
     </div>
   );

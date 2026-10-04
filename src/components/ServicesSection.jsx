@@ -1,4 +1,4 @@
-import { Heart, UserMinus, ShieldAlert, Sparkles, MessageCircle, ArrowRight, Lock, CheckCircle2 } from 'lucide-react';
+import { Heart, UserMinus, ShieldAlert, Sparkles, MessageCircle, ArrowRight, Lock } from 'lucide-react';
 
 const SERVICES = [
   {

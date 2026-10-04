@@ -7,35 +7,53 @@ export default function StarBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
+    if (!ctx) return;
+
     let animationFrameId;
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
+    let isVisible = true;
+    let isMounted = true;
+
+    // Detect mobile touch devices
+    const isMobile =
+      typeof window !== 'undefined' &&
+      (window.innerWidth < 768 ||
+        ('ontouchstart' in window && window.innerWidth < 1024));
+
+    let width = (canvas.width = canvas.parentElement ? canvas.parentElement.clientWidth : window.innerWidth);
+    let height = (canvas.height = canvas.parentElement ? canvas.parentElement.clientHeight : window.innerHeight);
 
     const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      if (!canvas || !isMounted) return;
+      const parent = canvas.parentElement;
+      width = canvas.width = parent ? parent.clientWidth : window.innerWidth;
+      height = canvas.height = parent ? parent.clientHeight : window.innerHeight;
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
 
-    // Mouse tracker for celestial interaction
-    const mouse = { x: -1000, y: -1000, radius: 140 };
-    const handleMouseMove = (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    };
-    const handleMouseLeave = () => {
-      mouse.x = -1000;
-      mouse.y = -1000;
-    };
+    // Mouse tracker for desktop only
+    const mouse = { x: -1000, y: -1000, radius: 120, radiusSq: 120 * 120 };
+    let handleMouseMove;
+    let handleMouseLeave;
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseleave', handleMouseLeave);
+    if (!isMobile) {
+      handleMouseMove = (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      };
+      handleMouseLeave = () => {
+        mouse.x = -1000;
+        mouse.y = -1000;
+      };
 
-    // Star generation
-    const starCount = Math.min(Math.floor((width * height) / 8000), 160);
+      window.addEventListener('mousemove', handleMouseMove, { passive: true });
+      window.addEventListener('mouseleave', handleMouseLeave, { passive: true });
+    }
+
+    // Star generation - optimized density
+    const starCount = isMobile ? 24 : Math.min(Math.floor((width * height) / 11000), 75);
     const stars = [];
 
     const colors = [
@@ -50,93 +68,74 @@ export default function StarBackground() {
       stars.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        size: Math.random() * 1.8 + 0.5,
-        baseAlpha: Math.random() * 0.7 + 0.3,
-        alpha: Math.random() * 0.7 + 0.3,
+        size: Math.random() * (isMobile ? 1.3 : 1.6) + 0.5,
+        baseAlpha: Math.random() * 0.5 + 0.3,
         color: colors[Math.floor(Math.random() * colors.length)],
-        twinkleSpeed: Math.random() * 0.02 + 0.005,
+        twinkleSpeed: Math.random() * 0.02 + 0.006,
         twinklePhase: Math.random() * Math.PI * 2,
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.25,
-        isSparkle: Math.random() < 0.15,
+        vx: (Math.random() - 0.5) * (isMobile ? 0.12 : 0.18),
+        vy: (Math.random() - 0.5) * (isMobile ? 0.12 : 0.18),
       });
     }
 
-    const drawSparkle = (x, y, size, color, alpha) => {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.strokeStyle = color;
-      ctx.lineWidth = 0.75;
-      ctx.globalAlpha = alpha;
-
-      const arm = size * 3;
-      ctx.beginPath();
-      ctx.moveTo(-arm, 0);
-      ctx.lineTo(arm, 0);
-      ctx.moveTo(0, -arm);
-      ctx.lineTo(0, arm);
-      ctx.stroke();
-
-      // Soft circular glow in center
-      const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, arm);
-      gradient.addColorStop(0, color);
-      gradient.addColorStop(1, 'transparent');
-      ctx.fillStyle = gradient;
-      ctx.beginPath();
-      ctx.arc(0, 0, arm, 0, Math.PI * 2);
-      ctx.fill();
-
-      ctx.restore();
-    };
+    const maxLineDist = 70;
+    const maxLineDistSq = maxLineDist * maxLineDist;
 
     const render = () => {
+      if (!isVisible || !isMounted) return;
+
       ctx.clearRect(0, 0, width, height);
 
-      // Draw constellation connections between nearby stars
-      for (let i = 0; i < stars.length; i++) {
-        for (let j = i + 1; j < stars.length; j++) {
-          const dx = stars[i].x - stars[j].x;
-          const dy = stars[i].y - stars[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+      // Constellation lines ONLY on desktop
+      if (!isMobile) {
+        for (let i = 0; i < stars.length; i++) {
+          const s1 = stars[i];
 
-          if (dist < 85) {
-            const lineAlpha = (1 - dist / 85) * 0.12;
-            ctx.strokeStyle = '#00E5FF';
-            ctx.lineWidth = 0.5;
-            ctx.globalAlpha = lineAlpha;
+          for (let j = i + 1; j < stars.length; j++) {
+            const s2 = stars[j];
+            const dx = s1.x - s2.x;
+            const dy = s1.y - s2.y;
+            const distSq = dx * dx + dy * dy;
+
+            if (distSq < maxLineDistSq) {
+              const dist = Math.sqrt(distSq);
+              const lineAlpha = (1 - dist / maxLineDist) * 0.1;
+              ctx.strokeStyle = '#00E5FF';
+              ctx.lineWidth = 0.5;
+              ctx.globalAlpha = lineAlpha;
+              ctx.beginPath();
+              ctx.moveTo(s1.x, s1.y);
+              ctx.lineTo(s2.x, s2.y);
+              ctx.stroke();
+            }
+          }
+
+          // Connect star to mouse if near
+          const dmx = s1.x - mouse.x;
+          const dmy = s1.y - mouse.y;
+          const mouseDistSq = dmx * dmx + dmy * dmy;
+          if (mouseDistSq < mouse.radiusSq) {
+            const distMouse = Math.sqrt(mouseDistSq);
+            const mouseAlpha = (1 - distMouse / mouse.radius) * 0.22;
+            ctx.strokeStyle = '#D4AF37';
+            ctx.lineWidth = 0.75;
+            ctx.globalAlpha = mouseAlpha;
             ctx.beginPath();
-            ctx.moveTo(stars[i].x, stars[i].y);
-            ctx.lineTo(stars[j].x, stars[j].y);
+            ctx.moveTo(s1.x, s1.y);
+            ctx.lineTo(mouse.x, mouse.y);
             ctx.stroke();
           }
         }
-
-        // Connect star to mouse if near
-        const dmx = stars[i].x - mouse.x;
-        const dmy = stars[i].y - mouse.y;
-        const distMouse = Math.sqrt(dmx * dmx + dmy * dmy);
-        if (distMouse < mouse.radius) {
-          const mouseAlpha = (1 - distMouse / mouse.radius) * 0.28;
-          ctx.strokeStyle = '#D4AF37';
-          ctx.lineWidth = 0.75;
-          ctx.globalAlpha = mouseAlpha;
-          ctx.beginPath();
-          ctx.moveTo(stars[i].x, stars[i].y);
-          ctx.lineTo(mouse.x, mouse.y);
-          ctx.stroke();
-        }
       }
 
-      // Update and draw stars
+      // Draw stars (ultra-fast rendering)
       for (let i = 0; i < stars.length; i++) {
         const star = stars[i];
 
         star.twinklePhase += star.twinkleSpeed;
-        const currentAlpha =
-          star.baseAlpha + Math.sin(star.twinklePhase) * 0.3;
+        const currentAlpha = star.baseAlpha + Math.sin(star.twinklePhase) * 0.25;
         const clampedAlpha = Math.max(0.1, Math.min(1, currentAlpha));
 
-        // Subtle position drift
         star.x += star.vx;
         star.y += star.vy;
 
@@ -145,31 +144,67 @@ export default function StarBackground() {
         if (star.y < 0) star.y = height;
         if (star.y > height) star.y = 0;
 
-        if (star.isSparkle) {
-          drawSparkle(star.x, star.y, star.size, star.color, clampedAlpha);
-        } else {
-          ctx.save();
-          ctx.beginPath();
-          ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        // Subtle glow for larger stars on desktop
+        if (!isMobile && star.size > 1.2) {
           ctx.fillStyle = star.color;
-          ctx.globalAlpha = clampedAlpha;
-          ctx.shadowBlur = star.size > 1.2 ? 6 : 2;
-          ctx.shadowColor = star.color;
+          ctx.globalAlpha = clampedAlpha * 0.2;
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, star.size * 2, 0, Math.PI * 2);
           ctx.fill();
-          ctx.restore();
         }
+
+        ctx.fillStyle = star.color;
+        ctx.globalAlpha = clampedAlpha;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fill();
       }
 
       animationFrameId = requestAnimationFrame(render);
     };
 
-    render();
+    // Pause animation when tab or section is not visible
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        isVisible = false;
+        cancelAnimationFrame(animationFrameId);
+      } else {
+        isVisible = true;
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = requestAnimationFrame(render);
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // IntersectionObserver to pause loop when scrolled past Hero
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          if (!isVisible) {
+            isVisible = true;
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = requestAnimationFrame(render);
+          }
+        } else {
+          isVisible = false;
+          cancelAnimationFrame(animationFrameId);
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(canvas);
+
+    animationFrameId = requestAnimationFrame(render);
 
     return () => {
+      isMounted = false;
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseleave', handleMouseLeave);
+      if (handleMouseMove) window.removeEventListener('mousemove', handleMouseMove);
+      if (handleMouseLeave) window.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, []);
 
@@ -177,7 +212,7 @@ export default function StarBackground() {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="fixed inset-0 w-full h-full pointer-events-none z-[3]"
+      className="absolute inset-0 w-full h-full pointer-events-none z-0"
     />
   );
 }
