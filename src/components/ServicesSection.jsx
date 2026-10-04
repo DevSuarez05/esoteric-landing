@@ -57,26 +57,26 @@ const SERVICES = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20 overflow-hidden">
+    <section id="services" className="relative py-10 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24 overflow-hidden">
       {/* Background mystic lights */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-purple-950/20 rounded-full blur-[150px] pointer-events-none" />
 
       {/* Section Header */}
-      <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-accent/40 bg-gold-accent/10 text-gold-accent text-xs font-cinzel tracking-widest uppercase mb-3 shadow-gold-glow animate-pulse">
+      <div className="text-center mb-6 sm:mb-12">
+        <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-gold-accent/40 bg-gold-accent/10 text-gold-accent text-[11px] sm:text-xs font-cinzel tracking-widest uppercase mb-2.5 sm:mb-3 shadow-gold-glow animate-pulse">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Trabajos Espirituales Garantizados • Magia Blanca</span>
         </div>
-        <h2 className="font-cinzel text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-wide">
+        <h2 className="font-cinzel text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-wide">
           Soluciones Espirituales para los <span className="text-gold-accent drop-shadow-gold-glow">Casos Más Difíciles</span>
         </h2>
-        <p className="mt-4 text-gray-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+        <p className="mt-2.5 sm:mt-4 text-gray-300 max-w-2xl mx-auto text-xs sm:text-base leading-relaxed px-1">
           Atención personalizada, confidencial y sin intermediarios. No sufras más en silencio: <strong className="text-white">tu primera consulta es 100% gratuita</strong> para diagnosticar tu caso de inmediato.
         </p>
       </div>
 
       {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 items-stretch">
         {SERVICES.map((service) => {
           const ServiceIcon = service.icon;
           const waUrl = `https://wa.me/573218352518?text=${encodeURIComponent(service.waText)}`;
@@ -84,7 +84,7 @@ export default function ServicesSection() {
           return (
             <div
               key={service.id}
-              className="relative rounded-3xl backdrop-blur-xl bg-gradient-to-b from-[#191133] via-[#100B22] to-[#0A0716] border-2 border-gold-accent/30 hover:border-gold-accent p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 shadow-[0_15px_40px_rgba(0,0,0,0.7)] hover:shadow-gold-glow group"
+              className="relative rounded-2xl sm:rounded-3xl backdrop-blur-xl bg-gradient-to-b from-[#191133] via-[#100B22] to-[#0A0716] border-2 border-gold-accent/30 hover:border-gold-accent p-5 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-[0_15px_40px_rgba(0,0,0,0.7)] hover:shadow-gold-glow group"
             >
               <div>
                 {/* Top Badge & Icon */}

@@ -49,12 +49,13 @@ export default function Navbar() {
           href="#"
           className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-accent rounded-lg py-1"
         >
-          <div className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-gold-accent/40 shadow-gold-glow group-hover:border-gold-accent group-hover:scale-105 transition-all duration-300 shrink-0 bg-black">
+          <div className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-gold-accent/40 shadow-gold-glow group-hover:border-gold-accent group-hover:scale-105 transition-all duration-300 shrink-0 bg-[#130E26]">
             <img
-              src="/logo.png"
+              src="/logo-sm.png"
               alt="TarotNauta Navegante Astral"
               width="44"
               height="44"
+              loading="eager"
               decoding="async"
               className="w-full h-full object-cover object-top scale-[1.35] translate-y-0.5"
             />

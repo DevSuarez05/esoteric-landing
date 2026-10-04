@@ -118,7 +118,7 @@ export default function Hero() {
               preload={hasStarted ? 'auto' : 'none'}
               style={{ objectFit: 'contain', width: '100%', height: '100%' }}
               className="w-full h-full object-contain bg-black"
-              poster="/video-poster.png"
+              poster="/video-poster.jpg"
             >
               <source src="/video.mp4" type="video/mp4" />
               Tu navegador no soporta la reproducción de video HTML5.

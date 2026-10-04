@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ServicesSection from './components/ServicesSection';
@@ -9,6 +10,15 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 
 export default function App() {
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#07050E] text-white selection:bg-gold-accent selection:text-black relative w-full max-w-full overflow-x-hidden">
       {/* Floating Glassmorphism Navigation */}
