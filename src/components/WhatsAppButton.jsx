@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Sparkles } from 'lucide-react';
+import { getWhatsAppUrl } from '../config/whatsapp';
 
-const WHATSAPP_URL =
-  'https://wa.me/573218352518?text=Hola%20TarotNauta%20%F0%9F%94%AE%2C%20deseo%20agendar%20una%20consulta%20personalizada%20de%20Tarot%20en%20vivo%20para%20resolver%20mis%20dudas.';
+const WHATSAPP_URL = getWhatsAppUrl(
+  'Hola TarotNauta, deseo agendar una consulta personalizada de Tarot en vivo para resolver mis dudas.'
+);
 
 export default function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
@@ -11,7 +13,7 @@ export default function WhatsAppButton() {
     <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center justify-center group mb-[env(safe-area-inset-bottom)]">
       {/* Mystic Tooltip */}
       <div
-        className={`absolute right-16 mr-3 px-3.5 py-2 rounded-2xl bg-[#0F0C1E]/95 backdrop-blur-md border border-gold-accent/40 shadow-2xl shadow-black/80 text-xs font-cinzel text-white whitespace-nowrap transition-all duration-300 pointer-events-none flex items-center gap-1.5 ${
+        className={`absolute right-16 mr-3 px-3.5 py-2 rounded-2xl bg-[#0F0C1E]/95 backdrop-blur-md border border-gold-accent/40 shadow-2xl shadow-black/80 text-xs sm:text-sm font-cinzel text-white whitespace-nowrap transition-all duration-300 pointer-events-none flex items-center gap-1.5 ${
           isHovered
             ? 'opacity-100 translate-x-0 scale-100'
             : 'opacity-0 translate-x-2 scale-95'
@@ -19,7 +21,7 @@ export default function WhatsAppButton() {
       >
         <Sparkles className="w-3.5 h-3.5 text-gold-accent animate-pulse" />
         <span className="font-semibold text-gold-accent tracking-wide">
-          Consulta Personalizada 1 a 1 🔮
+          Consulta Personalizada 1 a 1
         </span>
       </div>
 

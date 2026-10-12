@@ -45,14 +45,14 @@ export default function Testimonials() {
 
       {/* Section Header */}
       <div className="text-center mb-10 sm:mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold-accent/40 bg-gold-accent/10 text-gold-accent text-xs font-cinzel tracking-widest uppercase mb-3 shadow-gold-glow">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-accent/40 bg-gold-accent/10 text-gold-accent text-xs sm:text-sm font-cinzel tracking-widest uppercase mb-3 shadow-gold-glow">
           <MessageCircle className="w-3.5 h-3.5" />
           Testimonios Reales & Casos Resueltos
         </div>
         <h2 className="font-cinzel text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-wide">
           Vidas Transformadas con <span className="text-gold-accent drop-shadow-gold-glow">Magia Blanca</span>
         </h2>
-        <p className="mt-3 text-gray-300 max-w-2xl mx-auto text-xs sm:text-base leading-relaxed px-2">
+        <p className="mt-3 text-gray-200 max-w-2xl mx-auto text-sm sm:text-lg leading-relaxed px-2">
           Personas reales que encontraron solución a sus problemas más difíciles de amor, salud y protección espiritual.
         </p>
       </div>
@@ -62,7 +62,7 @@ export default function Testimonials() {
         {TESTIMONIALS.map((testimonial) => (
           <div
             key={testimonial.id}
-            className="relative rounded-2xl sm:rounded-3xl bg-[#0F0C1E]/85 backdrop-blur-xl border border-white/10 p-5 sm:p-8 flex flex-col justify-between hover:border-gold-accent/40 transition-all duration-300 group hover:-translate-y-1.5 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
+            className="relative rounded-2xl sm:rounded-3xl bg-[#0F0C1E]/85 backdrop-blur-xl border border-white/10 p-6 sm:p-8 flex flex-col justify-between hover:border-gold-accent/40 transition-all duration-300 group hover:-translate-y-1.5 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
           >
             {/* Corner Quote Icon */}
             <div className="absolute top-5 right-5 sm:top-6 sm:right-6 text-white/10 group-hover:text-gold-accent/20 transition-colors pointer-events-none">
@@ -78,16 +78,16 @@ export default function Testimonials() {
                     className="w-4 h-4 text-gold-accent fill-gold-accent drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]"
                   />
                 ))}
-                <span className="ml-2 text-xs font-mono text-gray-400">5.0</span>
+                <span className="ml-2 text-xs sm:text-sm font-mono text-gray-300">5.0</span>
               </div>
 
               {/* Highlight badge */}
-              <div className="inline-block px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[10px] sm:text-[11px] font-cinzel text-gold-accent tracking-wider uppercase mb-3 sm:mb-4">
+              <div className="inline-block px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs sm:text-sm font-cinzel text-gold-accent tracking-wider uppercase mb-3 sm:mb-4">
                 ✦ {testimonial.highlight}
               </div>
 
               {/* Quote Content */}
-              <p className="text-gray-300 text-xs sm:text-base font-light leading-relaxed italic mb-6 sm:mb-8">
+              <p className="text-gray-200 text-sm sm:text-lg font-light leading-relaxed italic mb-6 sm:mb-8">
                 "{testimonial.quote}"
               </p>
             </div>
@@ -118,11 +118,11 @@ export default function Testimonials() {
               </div>
 
               <div className="min-w-0">
-                <h4 className="font-cinzel text-sm sm:text-base font-bold text-white group-hover:text-gold-accent transition-colors truncate">
+                <h4 className="font-cinzel text-base sm:text-lg font-bold text-white group-hover:text-gold-accent transition-colors truncate">
                   {testimonial.name}
                 </h4>
-                <p className="text-[11px] sm:text-xs text-astral-cyan font-mono">{testimonial.sign}</p>
-                <p className="text-[10px] sm:text-[11px] text-gray-400 mt-0.5 truncate">{testimonial.role}</p>
+                <p className="text-xs sm:text-sm text-astral-cyan font-mono">{testimonial.sign}</p>
+                <p className="text-xs text-gray-400 mt-0.5 truncate">{testimonial.role}</p>
               </div>
             </div>
           </div>

@@ -17,12 +17,27 @@
 
 html {
   width: 100%;
+  font-size: 17.5px;
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 18.5px;
+  }
 }
 
 body {
   background-color: #07050E;
   color: #ffffff;
   font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

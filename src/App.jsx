@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ServicesSection from './components/ServicesSection';
 import OracleIA from './components/OracleIA';
-import TarotSection from './components/TarotSection';
 import Testimonials from './components/Testimonials';
 import CommunitySection from './components/CommunitySection';
 import Footer from './components/Footer';
@@ -34,9 +33,6 @@ export default function App() {
 
         {/* Oracle AI Altar - 1ª Pregunta Gratis Lead Magnet */}
         <OracleIA />
-
-        {/* 3-Card Tarot Reading with 3D Flip & Confetti */}
-        <TarotSection />
 
         {/* Testimonials & Ecos del Cosmos */}
         <Testimonials />

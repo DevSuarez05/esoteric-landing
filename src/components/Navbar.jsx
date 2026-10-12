@@ -22,7 +22,6 @@ export default function Navbar() {
 
   const navLinks = [
     { name: '1ª Pregunta Gratis', href: '#oracle' },
-    { name: 'Lectura de Tarot', href: '#tarot' },
     { name: 'Servicios Espirituales', href: '#services' },
     { name: 'Testimonios', href: '#testimonials' },
     { name: 'Comunidad', href: '#community' },
@@ -64,19 +63,19 @@ export default function Navbar() {
             <span className="font-cormorant text-2xl sm:text-3xl font-semibold tracking-[0.18em] text-white group-hover:text-gold-accent transition-colors duration-300 drop-shadow-[0_0_12px_rgba(212,175,55,0.4)] leading-tight">
               TAROTNAUTA
             </span>
-            <span className="font-montserrat text-[8px] sm:text-[9px] uppercase tracking-[0.22em] text-gold-accent/90 font-medium hidden xs:block">
+            <span className="font-montserrat text-[10px] sm:text-xs uppercase tracking-[0.22em] text-gold-accent/90 font-medium hidden xs:block">
               Tarot • Astrología • Quiromancia
             </span>
           </div>
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+        <div className="hidden md:flex items-center gap-8 text-base font-medium tracking-wide">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-300 hover:text-gold-accent transition-colors duration-200 relative py-1 group"
+              className="text-gray-200 hover:text-gold-accent transition-colors duration-200 relative py-1 group"
             >
               {link.name}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-accent to-astral-cyan group-hover:w-full transition-all duration-300" />
@@ -101,7 +100,7 @@ export default function Navbar() {
 
           <a
             href="#oracle"
-            className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-semibold rounded-full group bg-gradient-to-r from-gold-accent via-amber-200 to-astral-cyan shadow-gold-glow hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] active:scale-95 transition-all duration-300"
+            className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs sm:text-sm font-semibold rounded-full group bg-gradient-to-r from-gold-accent via-amber-200 to-astral-cyan shadow-gold-glow hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] active:scale-95 transition-all duration-300"
           >
             <span className="px-5 py-2 transition-all ease-in duration-200 bg-[#0B0914] rounded-full group-hover:bg-opacity-0 text-white group-hover:text-black font-cinzel tracking-wider flex items-center gap-1.5 font-bold">
               <Sparkles className="w-3.5 h-3.5 text-gold-accent group-hover:text-black transition-colors" />

@@ -18,7 +18,7 @@ export default function CommunitySection() {
             Únete a la Cofradía de las <span className="text-gold-accent drop-shadow-gold-glow">Almas Despiertas</span>
           </h2>
 
-          <p className="mt-3 text-gray-300 text-xs sm:text-base leading-relaxed px-1">
+          <p className="mt-3 text-gray-200 text-sm sm:text-lg leading-relaxed px-1">
             Más de 50,000 buscadores comparten lecturas en tiempo real, rituales de luna nueva y descifran profecías oraculares en nuestra comunidad privada.
           </p>
 
@@ -31,10 +31,10 @@ export default function CommunitySection() {
                 </svg>
               </div>
               <div>
-                <p className="text-xs sm:text-sm font-semibold text-white">
+                <p className="text-sm sm:text-base font-semibold text-white">
                   Únete a nuestra comunidad en Facebook
                 </p>
-                <p className="text-[10px] sm:text-[11px] text-blue-300 font-mono mt-0.5">
+                <p className="text-xs sm:text-sm text-blue-300 font-mono mt-0.5">
                   ✦ Tiradas en vivo y tránsitos en @tarotnauta
                 </p>
               </div>
@@ -44,7 +44,7 @@ export default function CommunitySection() {
               href="https://www.facebook.com/tarotnauta"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#1877F2] hover:bg-[#166fe5] text-white font-cinzel text-[11px] sm:text-xs font-bold tracking-wider transition-all duration-300 shadow-[0_0_20px_rgba(24,119,242,0.4)] hover:shadow-[0_0_30px_rgba(24,119,242,0.7)] flex items-center justify-center gap-2 hover:scale-105 active:scale-95 whitespace-nowrap"
+              className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#1877F2] hover:bg-[#166fe5] text-white font-cinzel text-xs sm:text-sm font-bold tracking-wider transition-all duration-300 shadow-[0_0_20px_rgba(24,119,242,0.4)] hover:shadow-[0_0_30px_rgba(24,119,242,0.7)] flex items-center justify-center gap-2 hover:scale-105 active:scale-95 whitespace-nowrap"
             >
               <span>Seguir en Facebook</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -55,18 +55,18 @@ export default function CommunitySection() {
             <input
               type="email"
               placeholder="Ingresa tu correo astral..."
-              className="w-full sm:w-72 px-4 py-2.5 sm:py-3 rounded-full bg-[#090712] border border-white/20 focus:border-gold-accent text-white placeholder-gray-500 text-xs sm:text-sm focus:outline-none"
+              className="w-full sm:w-72 px-4 py-2.5 sm:py-3 rounded-full bg-[#090712] border border-white/20 focus:border-gold-accent text-white placeholder-gray-500 text-sm sm:text-base focus:outline-none"
             />
             <button
               type="button"
-              className="w-full sm:w-auto px-6 py-2.5 sm:py-3 rounded-full font-cinzel text-xs font-bold tracking-widest text-black bg-gradient-to-r from-gold-accent to-astral-cyan hover:brightness-110 shadow-gold-glow transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+              className="w-full sm:w-auto px-6 py-2.5 sm:py-3 rounded-full font-cinzel text-xs sm:text-sm font-bold tracking-widest text-black bg-gradient-to-r from-gold-accent to-astral-cyan hover:brightness-110 shadow-gold-glow transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer active:scale-95"
             >
               Unirme al Círculo
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
 
-          <div className="mt-5 sm:mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-[11px] sm:text-xs text-gray-400">
+          <div className="mt-5 sm:mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-300">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-gold-accent" />
               Acceso 100% Gratuito

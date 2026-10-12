@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Sparkles, RotateCcw, Star, MessageCircle, Lock, ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { getWhatsAppUrl } from '../config/whatsapp';
 
 const ZODIAC_SIGNS = [
   { name: 'Aries', symbol: '♈', element: 'Fuego', color: 'from-amber-500 to-red-500' },
@@ -120,9 +121,9 @@ export default function OracleIA() {
   };
 
   // WhatsApp prefilled message containing user query and name
-  const whatsappConsultationUrl = `https://wa.me/573218352518?text=${encodeURIComponent(
-    `Hola TarotNauta 🔮, mi nombre es ${name || 'un consultante'} (${selectedSign}). Acabo de realizar mi 1ª pregunta gratis en la web: "${question}" y deseo continuar con mi Consulta Personalizada Completa en vivo.`
-  )}`;
+  const whatsappConsultationUrl = getWhatsAppUrl(
+    `Hola TarotNauta, mi nombre es ${name || 'un consultante'} (${selectedSign}). Realicé mi primera consulta en la web: "${question}" y deseo continuar con mi consulta personalizada completa en vivo.`
+  );
 
   return (
     <section id="oracle" className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto scroll-mt-24 overflow-hidden">
@@ -131,14 +132,14 @@ export default function OracleIA() {
 
       {/* Header */}
       <div className="text-center mb-10">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-accent/40 bg-gold-accent/10 text-gold-accent text-xs font-cinzel tracking-widest uppercase mb-3 shadow-gold-glow animate-pulse">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-accent/40 bg-gold-accent/10 text-gold-accent text-xs sm:text-sm font-cinzel tracking-widest uppercase mb-3 shadow-gold-glow animate-pulse">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Tu 1ª Pregunta es 100% Gratuita</span>
         </div>
         <h2 className="font-cinzel text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-wide">
           Inicia tu Consulta con el <span className="text-gold-accent drop-shadow-gold-glow">Oráculo Cósmico</span>
         </h2>
-        <p className="mt-3 text-gray-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+        <p className="mt-3 text-gray-200 max-w-2xl mx-auto text-sm sm:text-lg leading-relaxed">
           Formula tu pregunta clave sin costo. Obtén un diagnóstico certero inmediato y prepárate para profundizar en tu <strong className="text-white">consulta personalizada completa</strong> con nuestros maestros.
         </p>
       </div>
@@ -151,14 +152,14 @@ export default function OracleIA() {
         <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-astral-cyan/15 rounded-full blur-3xl pointer-events-none" />
 
         {/* Status bar */}
-        <div className="flex items-center justify-between pb-5 mb-6 border-b border-white/10 text-xs text-gray-400 font-mono">
+        <div className="flex items-center justify-between pb-5 mb-6 border-b border-white/10 text-xs sm:text-sm text-gray-300 font-mono">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-ping" />
-            <span className="text-gray-300">Canal de Iniciación Astral</span>
+            <span className="text-gray-200">Canal de Iniciación Astral</span>
           </div>
           <div className="flex items-center gap-2 text-gold-accent">
             <Sparkles className="w-3.5 h-3.5" />
-            <span className="font-semibold uppercase tracking-wider text-[11px]">1ª Pregunta de Cortesía</span>
+            <span className="font-semibold uppercase tracking-wider text-xs sm:text-sm">1ª Pregunta de Cortesía</span>
           </div>
         </div>
 
@@ -169,7 +170,7 @@ export default function OracleIA() {
               <div>
                 <label
                   htmlFor="oracle-name"
-                  className="block text-xs font-cinzel tracking-wider uppercase text-gold-accent mb-2 font-semibold"
+                  className="block text-xs sm:text-sm font-cinzel tracking-wider uppercase text-gold-accent mb-2 font-semibold"
                 >
                   Tu Nombre o Identidad Astral
                 </label>
@@ -180,7 +181,7 @@ export default function OracleIA() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Ej. Valentina Rivera"
-                  className="w-full px-4 py-3 rounded-xl bg-[#090712] border border-white/10 focus:border-gold-accent focus:ring-1 focus:ring-gold-accent text-white placeholder-gray-500 text-sm transition-all focus:outline-none"
+                  className="w-full px-4 py-3 rounded-xl bg-[#090712] border border-white/10 focus:border-gold-accent focus:ring-1 focus:ring-gold-accent text-white placeholder-gray-500 text-base transition-all focus:outline-none"
                 />
               </div>
 
@@ -188,7 +189,7 @@ export default function OracleIA() {
               <div>
                 <label
                   htmlFor="oracle-sign"
-                  className="block text-xs font-cinzel tracking-wider uppercase text-gold-accent mb-2 font-semibold"
+                  className="block text-xs sm:text-sm font-cinzel tracking-wider uppercase text-gold-accent mb-2 font-semibold"
                 >
                   Signo Solar / Ascendente
                 </label>
@@ -196,7 +197,7 @@ export default function OracleIA() {
                   id="oracle-sign"
                   value={selectedSign}
                   onChange={(e) => setSelectedSign(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-[#090712] border border-white/10 focus:border-gold-accent focus:ring-1 focus:ring-gold-accent text-white text-sm transition-all focus:outline-none cursor-pointer"
+                  className="w-full px-4 py-3 rounded-xl bg-[#090712] border border-white/10 focus:border-gold-accent focus:ring-1 focus:ring-gold-accent text-white text-base transition-all focus:outline-none cursor-pointer"
                 >
                   {ZODIAC_SIGNS.map((sign) => (
                     <option key={sign.name} value={sign.name} className="bg-[#0B0914] text-white">
@@ -212,11 +213,11 @@ export default function OracleIA() {
               <div className="flex items-center justify-between mb-2">
                 <label
                   htmlFor="oracle-question"
-                  className="block text-xs font-cinzel tracking-wider uppercase text-gold-accent font-semibold"
+                  className="block text-xs sm:text-sm font-cinzel tracking-wider uppercase text-gold-accent font-semibold"
                 >
                   Tu Pregunta al Oráculo (Gratuita)
                 </label>
-                <span className="text-[11px] text-astral-cyan font-mono">
+                <span className="text-xs sm:text-sm text-astral-cyan font-mono">
                   🎁 Cortesía de Bienvenida
                 </span>
               </div>
@@ -227,9 +228,9 @@ export default function OracleIA() {
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
                 placeholder="Ej. ¿Qué siente esa persona por mí? / ¿Llegará la oportunidad económica que espero este mes?"
-                className="w-full px-4 py-3 rounded-xl bg-[#090712] border border-white/10 focus:border-gold-accent focus:ring-1 focus:ring-gold-accent text-white placeholder-gray-500 text-sm transition-all focus:outline-none resize-none leading-relaxed"
+                className="w-full px-4 py-3 rounded-xl bg-[#090712] border border-white/10 focus:border-gold-accent focus:ring-1 focus:ring-gold-accent text-white placeholder-gray-500 text-base transition-all focus:outline-none resize-none leading-relaxed"
               />
-              <p className="text-[11px] text-gray-400 mt-2">
+              <p className="text-xs sm:text-sm text-gray-300 mt-2">
                 * Tu pregunta es tratada con total confidencialidad y respeto espiritual.
               </p>
             </div>
@@ -237,7 +238,7 @@ export default function OracleIA() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-4 rounded-xl font-cinzel font-bold text-sm tracking-widest text-black bg-gradient-to-r from-gold-accent via-[#FFE28A] to-astral-cyan shadow-gold-glow hover:shadow-[0_0_35px_rgba(212,175,55,0.7)] active:scale-[0.99] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
+              className="w-full py-4 rounded-xl font-cinzel font-bold text-sm sm:text-base tracking-widest text-black bg-gradient-to-r from-gold-accent via-[#FFE28A] to-astral-cyan shadow-gold-glow hover:shadow-[0_0_35px_rgba(212,175,55,0.7)] active:scale-[0.99] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-black group-hover:rotate-180 transition-transform duration-700" />
               Revelar Mi 1ª Pregunta Gratis
@@ -297,18 +298,18 @@ export default function OracleIA() {
             {/* Oracle Advice Box */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="sm:col-span-2 p-4 rounded-xl bg-[#17122E] border border-purple-500/30">
-                <span className="text-[11px] uppercase tracking-widest text-purple-300 font-cinzel font-bold block mb-1">
+                <span className="text-xs uppercase tracking-widest text-purple-300 font-cinzel font-bold block mb-1">
                   Diagnóstico Preliminar
                 </span>
-                <p className="text-sm text-gray-300 italic">"{prophecy.advice}"</p>
+                <p className="text-base text-gray-200 italic">"{prophecy.advice}"</p>
               </div>
 
               <div className="p-4 rounded-xl bg-[#17122E] border border-astral-cyan/30 flex flex-col justify-center">
-                <span className="text-[11px] uppercase tracking-widest text-astral-cyan font-cinzel font-bold block mb-1">
+                <span className="text-xs uppercase tracking-widest text-astral-cyan font-cinzel font-bold block mb-1">
                   Arcano Regente
                 </span>
-                <p className="text-sm font-semibold text-white">{prophecy.destinyNumber}</p>
-                <span className="text-[10px] text-gray-400 mt-1">{prophecy.astralElement}</span>
+                <p className="text-base font-semibold text-white">{prophecy.destinyNumber}</p>
+                <span className="text-xs text-gray-300 mt-1">{prophecy.astralElement}</span>
               </div>
             </div>
 
@@ -317,11 +318,11 @@ export default function OracleIA() {
               <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4 w-32 h-32 bg-gold-accent/15 rounded-full blur-2xl pointer-events-none" />
               
               <div className="flex items-center gap-2 mb-3">
-                <span className="px-3 py-1 rounded-full bg-gold-accent text-black font-cinzel text-[11px] font-extrabold tracking-widest uppercase flex items-center gap-1 shadow-md">
-                  <Lock className="w-3 h-3" />
+                <span className="px-3 py-1 rounded-full bg-gold-accent text-black font-cinzel text-xs font-extrabold tracking-widest uppercase flex items-center gap-1 shadow-md">
+                  <Lock className="w-3.5 h-3.5" />
                   Paso Decisivo
                 </span>
-                <span className="text-xs text-astral-cyan font-mono">
+                <span className="text-xs sm:text-sm text-astral-cyan font-mono">
                   1ª Pregunta Gratis Canjeada
                 </span>
               </div>
@@ -330,12 +331,12 @@ export default function OracleIA() {
                 ¿Deseas saber el desenlace exacto, nombres y fechas?
               </h3>
 
-              <p className="text-sm text-gray-300 leading-relaxed mb-5">
+              <p className="text-base sm:text-lg text-gray-200 leading-relaxed mb-5">
                 {prophecy.cliffhanger}
               </p>
 
               {/* Consultation Features Checklist */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 pt-4 border-t border-white/10 text-xs text-gray-200">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 pt-4 border-t border-white/10 text-sm text-gray-200">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-gold-accent shrink-0" />
                   <span>Atención 1 a 1 en vivo con Maestro</span>
@@ -356,7 +357,7 @@ export default function OracleIA() {
                   href={whatsappConsultationUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-4 px-6 rounded-full font-cinzel font-bold text-sm sm:text-base tracking-wider uppercase text-black bg-gradient-to-r from-gold-accent via-[#FFE28A] to-[#25D366] hover:brightness-110 shadow-gold-glow hover:shadow-[0_0_35px_rgba(37,211,102,0.6)] active:scale-98 transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer"
+                  className="w-full py-4 px-6 rounded-full font-cinzel font-bold text-base sm:text-lg tracking-wider uppercase text-black bg-gradient-to-r from-gold-accent via-[#FFE28A] to-[#25D366] hover:brightness-110 shadow-gold-glow hover:shadow-[0_0_35px_rgba(37,211,102,0.6)] active:scale-98 transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer"
                 >
                   <MessageCircle className="w-5 h-5 text-black fill-black" />
                   <span>Continuar mi Consulta Completa por WhatsApp</span>
@@ -364,7 +365,7 @@ export default function OracleIA() {
                 </a>
               </div>
 
-              <div className="mt-4 flex items-center justify-center gap-2 text-[11px] text-gray-400">
+              <div className="mt-4 flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-300">
                 <ShieldCheck className="w-4 h-4 text-gold-accent" />
                 <span>Tu mensaje de WhatsApp ya incluye tu pregunta formulada para atenderte de inmediato.</span>
               </div>

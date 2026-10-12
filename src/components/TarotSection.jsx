@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import confetti from 'canvas-confetti';
+import { getWhatsAppUrl } from '../config/whatsapp';
 import {
   Sparkles,
   RotateCw,
@@ -178,9 +179,9 @@ export default function TarotSection() {
   const allCardsFlipped = cards.every((c) => c.isFlipped);
 
   // WhatsApp prefilled message containing the 3 drawn cards
-  const whatsappTarotUrl = `https://wa.me/573218352518?text=${encodeURIComponent(
-    `Hola TarotNauta 🔮, en la web realicé mi tirada de 3 cartas y obtuve:\n• Pasado: ${pastCard.name}\n• Presente: ${presentCard.name}\n• Futuro: ${futureCard.name}\n\nDeseo agendar mi Consulta Personalizada en vivo con un Maestro Tarotista para profundizar en el desenlace, fechas y nombres involucrados.`
-  )}`;
+  const whatsappTarotUrl = getWhatsAppUrl(
+    `Hola TarotNauta, realicé mi tirada de 3 cartas en la web y obtuve:\n- Pasado: ${pastCard.name}\n- Presente: ${presentCard.name}\n- Futuro: ${futureCard.name}\n\nDeseo agendar mi consulta personalizada en vivo con el Maestro para profundizar en detalles, fechas y desenlace.`
+  );
 
   return (
     <section id="tarot" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto scroll-mt-20 overflow-hidden">

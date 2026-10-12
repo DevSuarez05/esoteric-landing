@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { Sparkles, Eye, ArrowDown, Play, Volume2, Heart, UserMinus, ShieldAlert } from 'lucide-react';
 import StarBackground from './StarBackground';
+import { getWhatsAppUrl } from '../config/whatsapp';
 
 export default function Hero() {
   const [hasStarted, setHasStarted] = useState(false);
@@ -58,7 +59,7 @@ export default function Hero() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-accent"></span>
           </span>
-          <span className="font-montserrat text-[10px] sm:text-xs uppercase tracking-[0.14em] sm:tracking-[0.2em] text-gold-accent font-semibold">
+          <span className="font-montserrat text-xs sm:text-sm uppercase tracking-[0.14em] sm:tracking-[0.2em] text-gold-accent font-semibold">
             🌿 TRATO CON MAGIA BLANCA • CASOS DIFÍCILES • 1ª CONSULTA GRATIS
           </span>
           <Sparkles className="w-3.5 h-3.5 text-astral-cyan shrink-0" />
@@ -74,7 +75,7 @@ export default function Hero() {
         </h1>
 
         {/* 2. Subtítulo persuasivo con alto contraste */}
-        <p className="mt-1.5 sm:mt-4 text-xs sm:text-base md:text-lg text-gray-200 max-w-2xl leading-relaxed font-serif font-normal px-2">
+        <p className="mt-2 sm:mt-4 text-sm sm:text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed font-serif font-normal px-2">
           <span className="sm:hidden">
             Atraigo al ser amado, alejo enemigos y curo maleficios con magia blanca pura.{' '}
           </span>
@@ -87,21 +88,21 @@ export default function Hero() {
         </p>
 
         {/* Quick Flyer Highlights Chips */}
-        <div className="mt-2 mb-2 sm:mb-6 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 max-w-2xl px-1">
-          <span className="px-2.5 py-0.5 sm:py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-300 text-[9px] sm:text-xs font-cinzel flex items-center gap-1">
-            <Heart className="w-2.5 sm:w-3 h-2.5 sm:h-3 shrink-0" />
+        <div className="mt-2.5 mb-2.5 sm:mb-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-2xl px-1">
+          <span className="px-3 py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs sm:text-sm font-cinzel flex items-center gap-1.5">
+            <Heart className="w-3 sm:w-3.5 h-3 sm:h-3.5 shrink-0" />
             <span>Atraigo al Ser Amado</span>
           </span>
-          <span className="px-2.5 py-0.5 sm:py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 text-[9px] sm:text-xs font-cinzel flex items-center gap-1">
-            <UserMinus className="w-2.5 sm:w-3 h-2.5 sm:h-3 shrink-0" />
+          <span className="px-3 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 text-xs sm:text-sm font-cinzel flex items-center gap-1.5">
+            <UserMinus className="w-3 sm:w-3.5 h-3 sm:h-3.5 shrink-0" />
             <span>Alejo al Ser Indeseable & Enemigos</span>
           </span>
-          <span className="px-2.5 py-0.5 sm:py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[9px] sm:text-xs font-cinzel flex items-center gap-1">
-            <ShieldAlert className="w-2.5 sm:w-3 h-2.5 sm:h-3 shrink-0" />
+          <span className="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-cinzel flex items-center gap-1.5">
+            <ShieldAlert className="w-3 sm:w-3.5 h-3 sm:h-3.5 shrink-0" />
             <span>Curo Maleficios & Brujería</span>
           </span>
-          <span className="px-2.5 py-0.5 sm:py-1 rounded-full bg-gold-accent/15 border border-gold-accent/40 text-gold-accent text-[9px] sm:text-xs font-cinzel font-bold flex items-center gap-1 shadow-sm">
-            <Sparkles className="w-2.5 sm:w-3 h-2.5 sm:h-3 shrink-0" />
+          <span className="px-3 py-1 rounded-full bg-gold-accent/15 border border-gold-accent/40 text-gold-accent text-xs sm:text-sm font-cinzel font-bold flex items-center gap-1.5 shadow-sm">
+            <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 shrink-0" />
             <span>1ª Pregunta Gratis</span>
           </span>
         </div>
@@ -152,8 +153,8 @@ export default function Hero() {
                 </div>
 
                 {/* Floating Sound Prompt Badge */}
-                <div className="inline-flex items-center gap-1 px-3 py-1 sm:py-1.5 rounded-full bg-[#0B0914]/95 border border-gold-accent/60 text-gold-accent text-[10px] sm:text-xs font-montserrat font-bold tracking-wider shadow-xl hover:border-gold-accent transition-all animate-bounce">
-                  <Volume2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-astral-cyan shrink-0" />
+                <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:py-2 rounded-full bg-[#0B0914]/95 border border-gold-accent/60 text-gold-accent text-xs sm:text-sm font-montserrat font-bold tracking-wider shadow-xl hover:border-gold-accent transition-all animate-bounce">
+                  <Volume2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-astral-cyan shrink-0" />
                   <span>Toca para ver con audio</span>
                 </div>
               </div>
@@ -162,20 +163,20 @@ export default function Hero() {
         </div>
 
         {/* 4. Action Buttons (Debajo del video) */}
-        <div className="mt-3.5 sm:mt-6 flex flex-col sm:flex-row items-center gap-2.5 sm:gap-4 w-full sm:w-auto px-2">
+        <div className="mt-4 sm:mt-7 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto px-2">
           <a
             href="#oracle"
-            className="w-full sm:w-auto px-6 py-3 sm:py-3.5 rounded-full font-cinzel text-xs sm:text-base font-bold tracking-widest text-black bg-gradient-to-r from-gold-accent via-[#FFDF73] to-gold-accent hover:brightness-110 shadow-gold-glow hover:shadow-[0_0_35px_rgba(212,175,55,0.7)] transition-all duration-300 flex items-center justify-center gap-2 group active:scale-95"
+            className="w-full sm:w-auto px-7 py-3.5 sm:py-4 rounded-full font-cinzel text-sm sm:text-lg font-bold tracking-widest text-black bg-gradient-to-r from-gold-accent via-[#FFDF73] to-gold-accent hover:brightness-110 shadow-gold-glow hover:shadow-[0_0_35px_rgba(212,175,55,0.7)] transition-all duration-300 flex items-center justify-center gap-2.5 group active:scale-95"
           >
             <Sparkles className="w-4 h-4 text-black group-hover:rotate-12 transition-transform shrink-0" />
             Hacer mi 1ª Pregunta Gratis
           </a>
 
           <a
-            href="https://wa.me/573218352518?text=Hola%20TarotNauta%20%F0%9F%94%AE%2C%20deseo%20agendar%20una%20consulta%20personalizada%20de%20Tarot%20en%20vivo%201%20a%201."
+            href={getWhatsAppUrl('Hola TarotNauta, deseo agendar una consulta personalizada de Tarot en vivo 1 a 1.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-6 py-3 sm:py-3.5 rounded-full font-cinzel text-xs sm:text-base font-semibold tracking-widest text-white backdrop-blur-md bg-white/5 border border-astral-cyan/40 hover:border-astral-cyan hover:bg-astral-cyan/10 shadow-cyan-glow transition-all duration-300 flex items-center justify-center gap-2 group active:scale-95"
+            className="w-full sm:w-auto px-7 py-3.5 sm:py-4 rounded-full font-cinzel text-sm sm:text-lg font-semibold tracking-widest text-white backdrop-blur-md bg-white/5 border border-astral-cyan/40 hover:border-astral-cyan hover:bg-astral-cyan/10 shadow-cyan-glow transition-all duration-300 flex items-center justify-center gap-2.5 group active:scale-95"
           >
             <Eye className="w-4 h-4 text-astral-cyan group-hover:scale-110 transition-transform shrink-0" />
             Consulta Personalizada en Vivo
@@ -183,7 +184,7 @@ export default function Hero() {
         </div>
 
         {/* Reassurance text */}
-        <p className="mt-2 text-[10px] sm:text-xs text-gray-400 font-sans flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5">
+        <p className="mt-2.5 text-xs sm:text-sm text-gray-300 font-sans flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
           <span>✨ Sin registros complejos</span>
           <span>•</span>
           <span>🔒 100% Confidencial</span>

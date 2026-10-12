@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Sparkles, Send, CheckCircle2, Shield } from 'lucide-react';
+import { getWhatsAppUrl } from '../config/whatsapp';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -14,16 +15,13 @@ export default function Footer() {
   const quickLinks = [
     { name: 'Inicio', href: '#' },
     { name: '1ª Pregunta Gratis', href: '#oracle' },
-    { name: 'Lectura de Tarot', href: '#tarot' },
     { name: 'Testimonios', href: '#testimonials' },
     { name: 'Comunidad', href: '#community' },
   ];
 
   const oracleTools = [
     { name: '1ª Pregunta Gratis', href: '#oracle' },
-    { name: 'Tarot de Marsella 3D', href: '#tarot' },
-    { name: 'Lectura de 3 Cartas', href: '#tarot' },
-    { name: 'Consulta Personalizada VIP', href: 'https://wa.me/573218352518' },
+    { name: 'Consulta Personalizada VIP', href: getWhatsAppUrl('Hola TarotNauta, deseo recibir información para agendar una consulta personalizada VIP.') },
     { name: 'Círculo Esotérico', href: '#community' },
   ];
 
@@ -99,12 +97,12 @@ export default function Footer() {
                 <span className="font-cormorant text-2xl font-semibold tracking-[0.18em] text-white leading-tight">
                   TAROTNAUTA
                 </span>
-                <span className="font-montserrat text-[8px] uppercase tracking-[0.22em] text-gold-accent/90 font-medium">
+                <span className="font-montserrat text-[10px] sm:text-xs uppercase tracking-[0.22em] text-gold-accent/90 font-medium">
                   Tarot • Astrología • Quiromancia
                 </span>
               </div>
             </div>
-            <p className="text-xs text-gray-300 leading-relaxed font-serif">
+            <p className="text-sm text-gray-300 leading-relaxed font-serif">
               Conocimiento para interpretar los símbolos de tu camino. Las tradiciones esotéricas milenarias para guiar tu destino con máxima seriedad y confidencialidad.
             </p>
             {/* Social Icons */}
@@ -171,7 +169,7 @@ export default function Footer() {
               href="https://www.facebook.com/tarotnauta"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-gold-accent hover:text-white transition-colors pt-2 group"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-gold-accent hover:text-white transition-colors pt-2 group"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-gold-accent animate-ping" />
               <span className="group-hover:underline">Comunidad Oficial en Facebook: @tarotnauta</span>
@@ -180,10 +178,10 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-cinzel text-xs uppercase tracking-[0.2em] text-white font-bold mb-4">
+            <h4 className="font-cinzel text-xs sm:text-sm uppercase tracking-[0.2em] text-white font-bold mb-4">
               Navegación Astral
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-2.5 text-xs sm:text-sm">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a href={link.href} className="hover:text-gold-accent transition-colors">
@@ -196,10 +194,10 @@ export default function Footer() {
 
           {/* Oracle Tools */}
           <div>
-            <h4 className="font-cinzel text-xs uppercase tracking-[0.2em] text-white font-bold mb-4">
+            <h4 className="font-cinzel text-xs sm:text-sm uppercase tracking-[0.2em] text-white font-bold mb-4">
               Herramientas Cósmicas
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-2.5 text-xs sm:text-sm">
               {oracleTools.map((tool) => (
                 <li key={tool.name}>
                   <a href={tool.href} className="hover:text-gold-accent transition-colors">
@@ -212,11 +210,11 @@ export default function Footer() {
 
           {/* Legal & Privacy */}
           <div>
-            <h4 className="font-cinzel text-xs uppercase tracking-[0.2em] text-white font-bold mb-4 flex items-center gap-1.5">
+            <h4 className="font-cinzel text-xs sm:text-sm uppercase tracking-[0.2em] text-white font-bold mb-4 flex items-center gap-1.5">
               <Shield className="w-3.5 h-3.5 text-gold-accent" />
               Avisos Esotéricos
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-2.5 text-xs sm:text-sm">
               {legalLinks.map((legal) => (
                 <li key={legal.name}>
                   <a href={legal.href} className="hover:text-gold-accent transition-colors">
@@ -225,14 +223,14 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <div className="mt-4 p-3 rounded-xl bg-white/5 border border-white/5 text-[11px] text-gray-500 leading-normal">
+            <div className="mt-4 p-3 rounded-xl bg-white/5 border border-white/5 text-xs text-gray-400 leading-relaxed">
               ✦ Las lecturas e interpretaciones generadas por TarotNauta se ofrecen con fines reflexivos, de autoconocimiento y entretenimiento sagrado.
             </div>
           </div>
         </div>
 
         {/* Bottom Copyright & Credits */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-gray-400">
           <p>
             &copy; {new Date().getFullYear()} TarotNauta. Todos los derechos cósmicos reservados.
           </p>
